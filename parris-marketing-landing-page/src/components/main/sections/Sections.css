@@ -1,0 +1,397 @@
+.cards-section > .card,
+.testimonial-section-cards > .card {
+  margin-right: 0.3rem;
+  margin-left: 0.4rem;
+  border-radius: 10px;
+  min-width: 15rem;
+}
+
+.cards-section > .card {
+  max-height: 20rem;
+  min-height: 15rem;
+  border: none;
+}
+
+.cards-section .card-body {
+  padding-top: 0.2rem;
+}
+
+.bg-dark {
+  background-color: #eaeaeb !important;
+}
+
+.cards-section > .bg-dark {
+  background-color: #eaeaeb !important;
+  color: #000 !important;
+}
+
+.info-section {
+  margin-right: 1rem;
+}
+
+.bi::before {
+  color: rgba(216, 142, 76, 1) !important;
+  font-size: 2rem;
+}
+
+.info-section > h2,
+.info-section2 > h3,
+.info-section-3 > h4,
+.results-info-section > h4 {
+  margin-bottom: 1rem;
+  font-weight: 700;
+  font-size: 2.188rem;
+}
+
+.card-logo {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+#InfoSection1 .card-header {
+  background-color: unset !important;
+  border-bottom: 0;
+}
+
+h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.accolades-section {
+  background-image: linear-gradient(180deg, #00496b 2%, #002970 60%);
+  mix-blend-mode: multiply;
+  padding: 3rem;
+  margin: 2.5rem 0;
+  color: #fff;
+}
+
+.cover {
+  background-image: url("../../../assets/courthouse-header-fixed-glare.webp");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.accolades-section .accolades-logo {
+  width: 70%;
+  padding: auto 0;
+  margin: 0 auto;
+}
+
+.accolades-section > .container {
+  padding: 0;
+  margin: 0;
+}
+
+.img-section > img {
+  width: 31.625rem;
+  height: 32.563rem;
+}
+
+.info-section2 {
+  margin-left: 3.5rem;
+  max-width: 90%;
+  width: 29rem;
+}
+
+.info-section2 h3 {
+  margin: 1rem 0;
+}
+
+.cta-section,
+.testimonial-section {
+  padding: 4.5rem;
+  margin: 2.5rem 0;
+  color: #000;
+}
+
+.cta-section {
+  background-color: #eaeaeb;
+}
+
+.cta-section h3 {
+  font-size: 2.25rem;
+  margin-left: -6rem;
+}
+
+.btn-container {
+  margin-left: 5rem;
+}
+
+.info-section-3 {
+  width: 35.25rem;
+  margin-right: 4rem;
+  margin-left: 0;
+}
+
+.info-section-3-img {
+  width: 30rem;
+  height: 34rem;
+}
+
+.results-info-section {
+  margin-bottom: 2rem;
+}
+
+.results-info-section hr {
+  margin: 4rem auto 1rem auto;
+}
+
+.results-info-section > h4 {
+  max-width: 28.438rem;
+  margin: 0 auto;
+}
+
+.results-info-section > p {
+  width: 40rem;
+  margin: 1.5rem auto 0 auto;
+}
+
+.results-card-section .card-header > strong {
+  color: rgba(226, 164, 109, 1);
+  font-weight: 700;
+  font-size: 3.5rem;
+}
+
+.results-card-section .card-header {
+  background-color: unset !important;
+  border-bottom: 0 !important;
+}
+
+.results-card-section > .card {
+  padding: 20px;
+  min-width: 25rem;
+  min-height: 30rem;
+  border: 0.5px solid #dee2e6 !important;
+}
+
+.results-card-section strong {
+  font-weight: normal;
+  font-size: 3rem;
+}
+
+.results-card-section p {
+  font-size: 1rem;
+}
+
+.results-card-section .card-header,
+.results-card-section .card-header strong {
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.testimonial-section-info > strong {
+  color: rgba(226, 164, 109, 1);
+  font-size: 1.125rem;
+}
+
+.testimonial-section-info > h4 {
+  font-size: 2.188rem;
+  margin: 1rem 0 1.5rem 0;
+}
+
+.testimonial-section-cards > .card {
+  margin: 2rem 1rem;
+  min-width: 25rem;
+}
+
+.testimonial-section-cards .round {
+  border-radius: 100% !important;
+}
+
+.testimonial-section-cards h5 {
+  font-weight: bold;
+  margin-top: 1.5rem;
+}
+
+.testimonial-section-cards .card-text {
+  margin-top: 1.5rem;
+}
+
+footer {
+  background-image: linear-gradient(180deg, #00496b 2%, #002970 100%);
+  mix-blend-mode: multiply;
+  padding: 4.5rem 0 2rem 0;
+  margin: 2rem 0 0 0;
+  color: #fff;
+}
+
+footer caption {
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  color: #fff;
+}
+
+footer img {
+  min-width: 16.875rem;
+  min-height: 4.063rem;
+  width: 16.875rem;
+  height: 4.063rem;
+}
+
+@media only screen and (max-width: 767px) {
+  .info-section {
+    width: 100%;
+  }
+
+  .results-card-section h3 {
+    font-size: 1.2rem !important;
+  }
+
+  .results-card-section p {
+    width: 90%;
+  }
+
+  #InfoSection1 {
+    margin-top: 0 !important;
+  }
+
+  .img-section > img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .mt-5 {
+    margin-top: 1rem !important;
+  }
+
+  .info-section-3 {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  .info-section-3-img {
+    display: none;
+  }
+
+  .results-info-section > p {
+    width: 100%;
+    margin: 1.5rem auto 0 auto;
+  }
+
+  .results-card-section > .card {
+    padding: 20px 0 10px 0 !important;
+    margin: auto 0;
+    min-width: 19rem;
+    min-height: 100%;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  .results-card-section {
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  caption {
+    text-align: center;
+    font-size: 1rem !important;
+    padding-top: 1rem;
+  }
+
+  .accolades-logo {
+    width: 100%;
+    height: 100%;
+  }
+
+  .results-card-section .card-header > strong {
+    font-size: 2.5rem;
+  }
+
+  .btn-container .btn-secondary {
+    margin-top: 2rem;
+  }
+
+  #testiominials {
+    margin: 1rem auto 2rem auto !important;
+  }
+
+  .testimonial-section {
+    margin: 2.5rem 0 0 0;
+  }
+
+  .testimonial-section {
+    padding: 4rem 0;
+  }
+
+  .testimonial-section-cards > .card {
+    margin: auto;
+    min-width: 20rem;
+  }
+
+  .cta-section h3 {
+    margin-left: auto;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .cta-section .btn-container .btn-secondary {
+    margin-top: 2rem !important;
+  }
+
+  hr {
+    min-height: 4px;
+    width: 47px;
+    z-index: 6;
+    margin: 0 auto;
+    background: rgb(226, 164, 109, 1);
+    opacity: 1;
+    margin-bottom: 0.5rem;
+  }
+
+  .btn-container {
+    margin: auto;
+  }
+
+  .info-section2 {
+    margin: auto;
+    max-width: 100%;
+    width: 100rem;
+  }
+
+  h2,
+  h3,
+  h4 {
+    font-size: 1.5rem !important;
+  }
+
+  .results-card-section > .card,
+  .cards-section > .card {
+    padding: 1rem;
+    margin: 1.5rem auto;
+  }
+
+  footer {
+    margin: 0;
+  }
+}
+
+@media (min-width: 1400px) {
+  #InfoSection1 {
+    margin: 4rem auto;
+    width: 85%;
+  }
+
+  .cards-section > .card {
+    width: 15rem;
+  }
+
+  .results-card-section > .card {
+    min-height: 22.5rem;
+  }
+
+  i {
+    padding-top: 0.5rem;
+  }
+
+  .no-show-desktop {
+    display: none;
+  }
+}

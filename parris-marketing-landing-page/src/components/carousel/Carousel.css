@@ -1,0 +1,120 @@
+.carousel-caption {
+  position: unset;
+}
+
+.active .carousel-caption:hover {
+  background-color: #051222 !important;
+}
+
+.carousel-section {
+  background-image: linear-gradient(260deg, #00496b 2%, #002970 100%);
+}
+
+.carousel-caption > h2 {
+  color: rgba(216, 142, 76);
+  margin: 1rem auto;
+}
+
+.carousel-caption > p {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.carousel-caption button {
+  margin-bottom: 2rem;
+  background-color: unset;
+}
+
+.carousel-caption .btn-secondary:hover,
+.carousel-caption .btn:hover {
+  background-image: unset;
+  border-color: unset;
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 767px) {
+  .carousel-caption > h2 {
+    font-size: 2rem !important;
+    font-weight: 700;
+  }
+
+  .carousel-caption > .btn-secondary {
+    width: 7rem;
+    padding: 0 !important;
+    margin: 0;
+    background-color: unset !important;
+  }
+
+  .carousel-caption > p {
+    font-size: 0.78rem;
+    margin: 1rem 0;
+    padding: 0.3rem;
+    font-weight: 700;
+  }
+
+  .carousel-item {
+    padding: 1rem 2rem 2rem 2rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .carousel-item {
+    min-width: 35rem;
+  }
+
+  .carousel-section {
+    background: transparent;
+  }
+
+  #carousel-section {
+    min-width: 45rem;
+  }
+
+  .carousel {
+    top: 5%;
+  }
+
+  .carousel-container {
+    display: flex;
+  }
+
+  .carousel-instance {
+    margin: 0 10px;
+  }
+
+  .carousel-caption {
+    padding: 40px 0 0 0;
+    background-color: rgba(5, 18, 34, 0.7) !important;
+    width: 50%;
+    margin: auto;
+    border-radius: 10px;
+    min-height: 23rem;
+    border: 3px solid #6d6e71;
+  }
+
+  .carousel-caption p {
+    font-size: 1.5rem;
+    font-weight: normal;
+    margin: 2rem;
+  }
+
+  .carousel-caption h2 {
+    font-size: 2.438rem;
+    font-weight: bolder;
+    color: #fff;
+    margin-top: 1.5rem;
+  }
+
+  .carousel-caption button {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 0 2rem 0;
+    color: rgba(216, 142, 76);
+  }
+
+  .carousel-indicators {
+    margin-right: auto;
+    margin-left: auto;
+    width: 15rem;
+  }
+}

@@ -1,0 +1,168 @@
+h1 {
+  font-size: 3.5rem;
+  font-weight: 630;
+  width: 34.5rem;
+  line-height: 1;
+}
+
+.hero-banner-text p,
+.hero-banner-accolades-img {
+  max-width: 80%;
+}
+
+.hero-banner-accolades-img {
+  margin: 2rem 0;
+}
+
+.App-logo {
+  height: 3rem;
+  pointer-events: none;
+  margin-top: 1rem;
+}
+
+header .main-logo {
+  position: relative;
+}
+
+.logo-text {
+  font-size: 2.5rem;
+}
+
+.hero-banner .hero-banner-text {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.hero-banner p {
+  font-weight: normal;
+  margin: 2rem 0 2rem 0;
+}
+
+.hero-banner {
+  background-image: url("../../assets/courthouse-header-fixed-glare.webp");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+hr {
+  min-height: 4px;
+  width: 47px;
+  z-index: 6;
+  margin: 0;
+  background: rgba(226, 164, 109, 1);
+  margin-bottom: 0.5rem;
+  opacity: 1;
+  border: none;
+}
+
+.App-header {
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+.btn-secondary {
+  background-color: rgba(216, 142, 76);
+  font-weight: 700;
+  width: 12rem;
+  padding: 0.8rem;
+  border: none;
+  font-size: 1rem;
+}
+
+.btn-secondary:active,
+.btn-secondary:focus,
+.btn-secondary:focus-visible {
+  border-color: #fff !important;
+  outline: none;
+}
+
+.btn-secondary:hover,
+.btn:hover {
+  background-image: linear-gradient(
+    45deg,
+    rgba(216, 142, 76, 1) 0%,
+    rgba(246, 176, 120, 0.9) 100%
+  );
+  border-color: #fff;
+}
+
+.hero-banner-background {
+  border: none;
+  border-radius: 0;
+}
+
+.hero-banner .card-img,
+.hero-banner .card-img-overlay,
+.hero-banner .card {
+  border-radius: 0;
+  --bs-card-border-width: unset;
+}
+
+/* Mobile styles */
+@media only screen and (max-width: 767px) {
+  .hero-banner-accolades-img {
+    margin: 1rem auto;
+    max-width: 100%;
+    padding-bottom: 1.5rem;
+  }
+
+  .no-show-mobile {
+    display: none !important;
+  }
+
+  .hero-banner-text .btn {
+    display: block;
+    margin: 1rem auto 1.5rem auto !important;
+  }
+
+  .flex-mobile {
+    flex-direction: column;
+  }
+
+  header .btn-secondary {
+    display: none;
+  }
+
+  .hero-banner .btn-secondary {
+    margin-bottom: 1rem;
+  }
+
+  h1 {
+    width: 100%;
+    font-size: 2.6rem;
+  }
+
+  .mt-4 {
+    margin-top: 0 !important;
+  }
+}
+
+@media (min-width: 1400px) {
+  .hero-banner-text p {
+    min-width: 90%;
+  }
+
+  .hero-banner .hero-banner-text {
+    min-width: 53%;
+  }
+
+  .hero-banner {
+    padding-bottom: 4rem;
+  }
+
+  .App-header .btn {
+    margin-right: 3rem;
+  }
+
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 36%;
+  }
+
+  section {
+    margin: 5rem auto 3rem auto;
+  }
+}

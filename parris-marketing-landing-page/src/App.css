@@ -1,0 +1,115 @@
+.App {
+  text-align: left;
+}
+
+.App-logo-stamp {
+  position: absolute;
+  left: 37%;
+  top: 9.5%;
+  height: 112px;
+  max-height: 112px;
+  width: 100px;
+  min-width: 100px;
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+.header {
+  background-color: #000;
+}
+
+.App-header {
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+@media only screen and (max-width: 767px) {
+  .d-flex {
+    justify-content: center !important;
+  }
+
+  .btn-secondary {
+    margin: auto;
+  }
+
+  .form-section label {
+    text-align: left !important;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  strong,
+  p {
+    text-align: center;
+    z-index: 100000;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  caption,
+  strong,
+  p {
+    width: 90%;
+    margin: 1rem auto !important;
+  }
+
+  .card-header strong {
+    margin: 0 auto !important;
+  }
+
+  .info-section-3 p:last-of-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  #results {
+    margin-bottom: 0 !important;
+  }
+
+  .card-title {
+    padding: 0 !important;
+    margin: 0 auto 10px auto !important;
+    width: 100%;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  textarea {
+    margin-top: 1.5rem;
+  }
+
+  form .btn-secondary {
+    width: 100%;
+  }
+
+  form h5 {
+    font-size: 1.8rem !important;
+  }
+
+  .App-logo-stamp {
+    height: 80px;
+    max-height: 80px;
+    width: 80px;
+    max-width: 80px;
+    left: 68%;
+    top: 6.5%;
+  }
+
+  .carousel-caption {
+    position: unset;
+    min-height: 25vh;
+  }
+}
