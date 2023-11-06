@@ -1,17 +1,29 @@
+import React, { Suspense, lazy, useEffect } from "react";
 import "./App.css";
 import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 import HeroBanner from "./components/header/hero-banner/HeroBanner";
 import Main from "./components/main/Main";
 import AccoladesSection from "./components/main/side-sections/AccoladesSection";
-import InfoSection2 from "./components/main/sections/InfoSection2";
 import CTASection from "./components/main/side-sections/CTASection";
-import InfoSection3 from "./components/main/sections/InfoSection3";
-import ResultsSection from "./components/main/sections/ResultsSection";
-import TestimonialsSection from "./components/main/side-sections/TestimonialsSection";
-import FormSection from "./components/main/sections/FormSection";
 import Footer from "./components/footer/Footer";
 import IndividualIntervalsCarousel from "./components/carousel/Carousel";
-import { useEffect } from "react";
+
+// Lazy loaded components
+const InfoSection2 = lazy(() =>
+  import("./components/main/sections/InfoSection2"),
+);
+const InfoSection3 = lazy(() =>
+  import("./components/main/sections/InfoSection3"),
+);
+const ResultsSection = lazy(() =>
+  import("./components/main/sections/ResultsSection"),
+);
+const TestimonialsSection = lazy(() =>
+  import("./components/main/side-sections/TestimonialsSection"),
+);
+const FormSection = lazy(() =>
+  import("./components/main/sections/FormSection"),
+);
 
 const client = new ApolloClient({
   uri: "https://mig.parris.com/graphql",
@@ -39,17 +51,19 @@ function App() {
   return (
     <ApolloProvider client={client}>
       <div className="App">
-        <HeroBanner></HeroBanner>
-        <IndividualIntervalsCarousel></IndividualIntervalsCarousel>
-        <Main></Main>
-        <AccoladesSection></AccoladesSection>
-        <InfoSection2></InfoSection2>
-        <CTASection></CTASection>
-        <InfoSection3></InfoSection3>
-        <ResultsSection></ResultsSection>
-        <TestimonialsSection></TestimonialsSection>
-        <FormSection></FormSection>
-        <Footer></Footer>
+        <HeroBanner />
+        <IndividualIntervalsCarousel />
+        <Main />
+        <AccoladesSection />
+        <CTASection />
+        <Suspense fallback={<div>Loading...</div>}>
+          <InfoSection2 />
+          <InfoSection3 />
+          <ResultsSection />
+          <TestimonialsSection />
+          <FormSection />
+        </Suspense>
+        <Footer />
       </div>
     </ApolloProvider>
   );
