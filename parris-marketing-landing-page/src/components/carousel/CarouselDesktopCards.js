@@ -1,4 +1,4 @@
-import React, { Suspense, Component } from "react";
+import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Carousel.css";
 import getResults from "../results/Results";
@@ -57,19 +57,17 @@ function IndividualIntervalsCarousel() {
 
   return (
     <section id="carousel-section" className="carousel-section no-show-mobile">
-      <Suspense fallback={<div>Loading Carousel...</div>}>
-        <Carousel>
-          {results.map((result, index) => (
-            <Carousel.Item key={index}>
-              <Carousel.Caption className="shadow">
-                <h2>{result.title}</h2>
-                <p>{result.excerpt}</p>
-                <ResultsSliderModal result={result}></ResultsSliderModal>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </Suspense>
+      <Carousel>
+        {results.map((result, index) => (
+          <Carousel.Item key={index}>
+            <Carousel.Caption className="shadow">
+              <h2>{result.title}</h2>
+              <p>{result.excerpt}</p>
+              <ResultsSliderModal result={result}></ResultsSliderModal>
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </section>
   );
 }

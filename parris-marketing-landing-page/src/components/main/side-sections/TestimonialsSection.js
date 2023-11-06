@@ -22,10 +22,12 @@ const TestimonialsSection = () => {
               <img
                 src={lisaH}
                 className="round mx-auto d-block"
-                alt="..."
+                width="90"
+                height="90"
+                alt="PARRIS Law Firm client, Lisa H."
                 loading="lazy"
               />
-              <h5 className="card-title">Lisa. H</h5>
+              <h5 className="card-title">Lisa H.</h5>
               <h6>Car Accident Client</h6>
               <p className="card-text">
                 PARRIS is the BEST law firm out there. They treated me like
@@ -35,7 +37,9 @@ const TestimonialsSection = () => {
               <img
                 src={fiveStarReview}
                 className="rounded mx-auto d-block"
-                alt="..."
+                width="155"
+                height="35"
+                alt="Lisa H. Client's 5 star review"
                 loading="lazy"
               />
             </div>
@@ -48,7 +52,9 @@ const TestimonialsSection = () => {
               <img
                 src={aspenB}
                 className="round mx-auto d-block"
-                alt="..."
+                width="90"
+                height="90"
+                alt="PARRIS Law Firm client, Aspen B."
                 loading="lazy"
               />
               <h5 className="card-title">Aspen B.</h5>
@@ -61,7 +67,9 @@ const TestimonialsSection = () => {
               <img
                 src={fiveStarReview}
                 className="rounded mx-auto d-block"
-                alt="..."
+                width="155"
+                height="35"
+                alt="Lisa H. Client's 5 star review"
                 loading="lazy"
               />
             </div>
@@ -74,7 +82,9 @@ const TestimonialsSection = () => {
               <img
                 src={armandoA}
                 className="round mx-auto d-block"
-                alt="..."
+                width="90"
+                height="90"
+                alt="PARRIS Law Firm client, Armando A."
                 loading="lazy"
               />
               <h5 className="card-title">Armando A.</h5>
@@ -87,7 +97,9 @@ const TestimonialsSection = () => {
               <img
                 src={fiveStarReview}
                 className="rounded mx-auto d-block"
-                alt="..."
+                width="155"
+                height="35"
+                alt="Armando A. Client's 5 star review"
                 loading="lazy"
               />
             </div>

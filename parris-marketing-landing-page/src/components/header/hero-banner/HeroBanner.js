@@ -32,7 +32,10 @@ const HeroBanner = () => {
             <img
               src={accoladesLogos}
               class="img-fluid hero-banner-accolades-img"
+              width="550"
+              height="122"
               alt="PARRIS Law Firm Award Accolades"
+              loading="lazy"
             />
           </div>
         </div>

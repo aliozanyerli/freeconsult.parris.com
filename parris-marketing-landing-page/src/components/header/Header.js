@@ -11,7 +11,10 @@ const Header = () => {
           <img
             src={parrisLogo}
             className="App-logo"
+            width="300"
+            height="150"
             alt="PARRIS Law Firm logo"
+            loading="lazy"
           />
         </div>
         <div className="mt-4 ms-auto no-show-mobile">

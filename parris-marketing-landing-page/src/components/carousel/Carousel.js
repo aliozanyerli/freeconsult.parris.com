@@ -1,4 +1,4 @@
-import React, { Suspense, Component } from "react";
+import React, { Component } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Carousel.css";
 import getResults from "../results/Results";
@@ -12,15 +12,18 @@ class ErrorBoundary extends Component {
   }
 
   static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
+    // You can also log the error to an error reporting service
     console.error(error, errorInfo);
   }
 
   render() {
     if (this.state.hasError) {
+      // You can render any custom fallback UI
       return <h2>Something went wrong.</h2>;
     }
 
@@ -36,40 +39,37 @@ const removeHTMLTags = (str) => {
 function IndividualIntervalsCarousel() {
   const { loading, error, data } = useQuery(getResults);
 
-  if (loading)
-    return <p style={{ display: "none" }}>Loading PARRIS results...</p>;
-  if (error) return <p>PARRIS Case Results: {error.message}</p>;
+  if (loading) return <p>Loading PARRIS results...</p>;
+  if (error) return <p>Error: {error.message}</p>;
 
-  const results = data.results.edges.map((result) => {
-    console.log(result.node);
+  const results = data.results.edges.map((edge) => {
+    const { node } = edge;
     return {
-      title: result.node.title,
-      excerpt: removeHTMLTags(result.node.excerpt),
-      content: removeHTMLTags(result.node.content),
-      hasVerdict: result.node.resultsSettings.hasVerdict,
+      title: node.title,
+      excerpt: removeHTMLTags(node.excerpt),
+      content: removeHTMLTags(node.content),
+      hasVerdict: node.resultsSettings.hasVerdict,
       categories:
-        result.node.categories.edges.length > 0
-          ? result.node.categories.edges[0].node.name
+        node.categories.edges.length > 0
+          ? node.categories.edges[0].node.name
           : null,
-      menuOrder: result.node.menuOrder,
+      menuOrder: node.menuOrder,
     };
   });
 
   return (
     <section id="carousel-section" className="carousel-section no-show-desktop">
-      <Suspense fallback={<div>Loading Carousel...</div>}>
-        <Carousel className="container">
-          {results.map((result, index) => (
-            <Carousel.Item key={index}>
-              <Carousel.Caption>
-                <h2>{result.title}</h2>
-                <p>{result.excerpt}</p>
-                <ResultsSliderModal result={result}></ResultsSliderModal>
-              </Carousel.Caption>
-            </Carousel.Item>
-          ))}
-        </Carousel>
-      </Suspense>
+      <Carousel className="container">
+        {results.map((result, index) => (
+          <Carousel.Item key={index}>
+            <Carousel.Caption>
+              <h2>{result.title}</h2>
+              <p>{result.excerpt}</p>
+              <ResultsSliderModal result={result} />
+            </Carousel.Caption>
+          </Carousel.Item>
+        ))}
+      </Carousel>
     </section>
   );
 }
