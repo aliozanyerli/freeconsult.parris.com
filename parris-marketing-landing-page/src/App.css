@@ -31,7 +31,7 @@ p {
   }
 
   p {
-    line-height: 1.5;
+    line-height: 1.7;
   }
 
   .btn-secondary {
@@ -64,7 +64,7 @@ p {
   caption,
   strong,
   p {
-    width: 90%;
+    width: 90% !important;
     margin: 1rem auto !important;
   }
 
@@ -85,10 +85,6 @@ p {
     padding: 0 !important;
     margin: 0 auto 10px auto !important;
     width: 100%;
-  }
-
-  p {
-    font-size: 1rem;
   }
 
   textarea {

@@ -47,7 +47,7 @@ const IndividualIntervalsCarousel = React.memo(() => {
     });
   }, [data]);
 
-  if (loading) return <p>Loading PARRIS results...</p>;
+  if (loading) return <></>;
   if (error) return <p>Error: {error.message}</p>;
 
   return (

@@ -66,7 +66,7 @@ const TestimonialsSection = () => {
               </p>
               <img
                 src={fiveStarReview}
-                className="rounded mx-auto d-block"
+                className="rounded mx-auto d-block aspen-five-star-review"
                 width="155"
                 height="35"
                 alt="Lisa H. Client's 5 star review"
@@ -96,7 +96,7 @@ const TestimonialsSection = () => {
               </p>
               <img
                 src={fiveStarReview}
-                className="rounded mx-auto d-block"
+                className="rounded mx-auto d-block armando-five-star-review"
                 width="155"
                 height="35"
                 alt="Armando A. Client's 5 star review"

@@ -111,6 +111,15 @@ hr {
     padding-bottom: 1.5rem;
   }
 
+  .hero-banner {
+    background-image: url("../../assets/courthouse-header-fixed-glare.webp");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: scroll;
+    height: 70vh;
+  }
+
   .hero-banner-accolades {
     display: flex;
   }
@@ -152,11 +161,12 @@ hr {
   }
 
   .hero-banner .hero-banner-text {
-    min-width: 53%;
+    min-width: 50%;
+    margin-left: 70px;
   }
 
   .hero-banner {
-    padding-bottom: 4rem;
+    padding-bottom: 1.5rem;
   }
 
   .App-header .btn {

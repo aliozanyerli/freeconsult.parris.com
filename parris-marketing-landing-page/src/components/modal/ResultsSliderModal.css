@@ -7,7 +7,7 @@
 
 .offcanvas .container {
   padding: 0 0.1rem;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .offcanvas-header p {
@@ -33,16 +33,15 @@
 @media only screen and (max-width: 767px) {
   .offcanvas-header {
     flex-direction: column-reverse;
-    padding-top: 2rem;
+    padding-top: 4rem;
     padding-bottom: 0;
     margin-bottom: 0;
-    height: 25vh;
+    height: 30vh;
   }
 
   .btn-close {
-    padding: 1rem !important;
-    color: rgb(216, 142, 76) !important;
-    font-size: 2rem;
+    padding: 0.5rem !important;
+    font-size: 1.5rem;
     background-image: url("../../../node_modules/bootstrap-icons/icons/arrow-up-circle.svg");
   }
 

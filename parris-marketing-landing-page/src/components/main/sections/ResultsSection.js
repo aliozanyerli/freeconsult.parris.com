@@ -22,7 +22,7 @@ const ResultsSection = () => {
             <strong>$120M</strong>
           </div>
           <div className="card-body">
-            <h3 className="card-title">T-Bone Accident Verdict</h3>
+            <h3 className="card-title pb-3">T-Bone Accident Verdict</h3>
             <p className="card-text">
               Our client was driving home on Valentine’s Day when a distracted
               driver ran a stop sign directly in front of him, causing a T-bone
@@ -40,7 +40,7 @@ const ResultsSection = () => {
             <strong>$56.5M</strong>
           </div>
           <div className="card-body">
-            <h3 className="card-title">
+            <h3 className="card-title pb-3">
               Truck Accident Verdict Against CRST, Inc.
             </h3>
             <p className="card-text">
@@ -59,7 +59,7 @@ const ResultsSection = () => {
             <strong>$41.6M</strong>
           </div>
           <div className="card-body">
-            <h3 className="card-title">
+            <h3 className="card-title pb-3">
               Distracted Driver Car Accident Verdict - Palmdale, California
             </h3>
             <p className="card-text">
@@ -80,7 +80,9 @@ const ResultsSection = () => {
             <strong>$23M</strong>
           </div>
           <div className="card-body">
-            <h3 className="card-title">Rollover Car Accident Settlement</h3>
+            <h3 className="card-title pb-1">
+              Rollover Car Accident Settlement
+            </h3>
             <p className="card-text">
               While riding as a passenger, the driver made a sharp turn and lost
               control of his vehicle, rolling over two fences into a cement
@@ -99,7 +101,7 @@ const ResultsSection = () => {
             <strong>$17.5M</strong>
           </div>
           <div className="card-body">
-            <h3 className="card-title">Truck Work Accident Settlement</h3>
+            <h3 className="card-title pb-2">Truck Work Accident Settlement</h3>
             <p className="card-text">
               Our client, a truck driver, was securing a load for transportation
               when the load fell on top of him, pinning him to the ground. He
@@ -117,7 +119,7 @@ const ResultsSection = () => {
             <strong>$14.8M</strong>
           </div>
           <div className="card-body">
-            <h3 className="card-title">Pedestrian Accident Settlement</h3>
+            <h3 className="card-title pb-3">Pedestrian Accident Settlement</h3>
             <p className="card-text">
               A teenage girl was crossing the street in Bakersfield when a car
               struck her without warning. PARRIS attorneys fought relentlessly

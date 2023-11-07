@@ -147,7 +147,7 @@ h3 {
 }
 
 .results-info-section hr {
-  margin: 4rem auto 1rem auto;
+  margin: 0 auto 1rem auto;
 }
 
 .results-info-section > h4 {
@@ -163,7 +163,16 @@ h3 {
 .results-card-section .card-header > strong {
   color: rgba(226, 164, 109, 1);
   font-weight: 700;
-  font-size: 3.5rem;
+  font-size: 2.188rem;
+}
+
+.results-card-section .card-body > h3 {
+  font-size: 1.4rem;
+}
+
+.results-card-section .card-body > p {
+  font-size: 1.125rem;
+  padding: 1rem auto;
 }
 
 .results-card-section .card-header {
@@ -216,16 +225,17 @@ h3 {
 
 .testimonial-section-cards h5 {
   font-weight: bold;
-  margin-top: 1.5rem;
+  margin-top: 1rem !important;
 }
 
 .testimonial-section-cards .card-text {
   margin-top: 1.5rem;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 footer {
-  background-image: linear-gradient(180deg, #00496b 2%, #002970 100%);
-  mix-blend-mode: multiply;
   padding: 4.5rem 0 2rem 0;
   margin: 2rem 0 0 0;
   color: #fff;
@@ -250,12 +260,17 @@ footer img {
 }
 
 @media only screen and (max-width: 767px) {
+  .cards-section > .card {
+    max-height: 22rem;
+    min-height: 22rem;
+  }
+
   .info-section {
     width: 100%;
   }
 
   .results-card-section h3 {
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
   }
 
   .results-card-section p {
@@ -271,7 +286,7 @@ footer img {
   }
 
   .img-section > img {
-    width: 80%;
+    width: 100%;
     height: 80%;
   }
 
@@ -319,7 +334,7 @@ footer img {
   }
 
   .results-card-section .card-header > strong {
-    font-size: 2.5rem;
+    font-size: 2.3rem;
   }
 
   .btn-container .btn-secondary {
@@ -332,15 +347,12 @@ footer img {
 
   .testimonial-section {
     margin: 2.5rem 0 0 0;
-  }
-
-  .testimonial-section {
     padding: 4rem 0;
   }
 
   .testimonial-section-cards > .card {
-    margin: auto;
-    min-width: 20rem;
+    margin: 1.5rem auto;
+    min-width: 18rem;
   }
 
   .cta-section h3 {
@@ -357,10 +369,15 @@ footer img {
     min-height: 4px;
     width: 47px;
     z-index: 6;
-    margin: 0 auto;
+    margin: 2rem auto;
     background: rgb(226, 164, 109, 1);
     opacity: 1;
     margin-bottom: 0.5rem;
+  }
+
+  .results-info-section hr {
+    margin-top: 4rem;
+    margin-bottom: 0;
   }
 
   .btn-container {
@@ -391,6 +408,19 @@ footer img {
 }
 
 @media (min-width: 1400px) {
+  .aspen-five-star-review,
+  .armando-five-star-review {
+    position: relative;
+  }
+
+  .aspen-five-star-review {
+    top: 6.2%;
+  }
+
+  .armando-five-star-review {
+    top: 13%;
+  }
+
   #InfoSection1 {
     margin: 4rem auto;
     width: 85%;
@@ -401,7 +431,7 @@ footer img {
   }
 
   .results-card-section > .card {
-    min-height: 22.5rem;
+    min-height: 25.5rem;
   }
 
   i {
