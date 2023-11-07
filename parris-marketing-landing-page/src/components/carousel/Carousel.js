@@ -1,34 +1,25 @@
-import React, { Component } from "react";
+import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Carousel.css";
 import getResults from "../results/Results";
 import { useQuery } from "@apollo/client";
-import ResultsSliderModal from "../modal/ResultsSliderModal";
 
-class ErrorBoundary extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { hasError: false };
+const ResultsSliderModal = lazy(() => import("../modal/ResultsSliderModal"));
+
+function ErrorBoundary({ children }) {
+  const [hasError, setHasError] = useState(false);
+
+  const getDerivedStateFromError = useCallback(() => {
+    setHasError(true);
+  }, []);
+
+  useEffect(() => {}, []);
+
+  if (hasError) {
+    return <h2>Something went wrong.</h2>;
   }
 
-  static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
-    return { hasError: true };
-  }
-
-  componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
-    console.error(error, errorInfo);
-  }
-
-  render() {
-    if (this.state.hasError) {
-      // You can render any custom fallback UI
-      return <h2>Something went wrong.</h2>;
-    }
-
-    return this.props.children;
-  }
+  return children;
 }
 
 const removeHTMLTags = (str) => {
@@ -36,44 +27,49 @@ const removeHTMLTags = (str) => {
   return doc.body.textContent || "";
 };
 
-function IndividualIntervalsCarousel() {
+const IndividualIntervalsCarousel = React.memo(() => {
   const { loading, error, data } = useQuery(getResults);
+
+  const results = React.useMemo(() => {
+    return data?.results.edges.map((edge) => {
+      const { node } = edge;
+      return {
+        title: node.title,
+        excerpt: removeHTMLTags(node.excerpt),
+        content: removeHTMLTags(node.content),
+        hasVerdict: node.resultsSettings.hasVerdict,
+        categories:
+          node.categories.edges.length > 0
+            ? node.categories.edges[0].node.name
+            : null,
+        menuOrder: node.menuOrder,
+      };
+    });
+  }, [data]);
 
   if (loading) return <p>Loading PARRIS results...</p>;
   if (error) return <p>Error: {error.message}</p>;
 
-  const results = data.results.edges.map((edge) => {
-    const { node } = edge;
-    return {
-      title: node.title,
-      excerpt: removeHTMLTags(node.excerpt),
-      content: removeHTMLTags(node.content),
-      hasVerdict: node.resultsSettings.hasVerdict,
-      categories:
-        node.categories.edges.length > 0
-          ? node.categories.edges[0].node.name
-          : null,
-      menuOrder: node.menuOrder,
-    };
-  });
-
   return (
     <section id="carousel-section" className="carousel-section no-show-desktop">
       <Carousel className="container">
-        {results.map((result, index) => (
+        {results?.map((result, index) => (
           <Carousel.Item key={index}>
             <Carousel.Caption>
               <h2>{result.title}</h2>
               <p>{result.excerpt}</p>
-              <ResultsSliderModal result={result} />
+              <Suspense fallback={<div>Loading...</div>}>
+                <ResultsSliderModal result={result} />
+              </Suspense>
             </Carousel.Caption>
           </Carousel.Item>
         ))}
       </Carousel>
     </section>
   );
-}
+});
 
+// Wrap the carousel in the error boundary
 function IndividualIntervalsCarouselWrapped() {
   return (
     <ErrorBoundary>

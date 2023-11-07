@@ -38,6 +38,10 @@
     font-weight: 700;
   }
 
+  .active .carousel-caption:hover {
+    background-color: transparent !important;
+  }
+
   .carousel-caption > .btn-secondary {
     width: 7rem;
     padding: 0 !important;

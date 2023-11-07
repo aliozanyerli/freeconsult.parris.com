@@ -3,7 +3,7 @@
   margin-right: 0.3rem;
   margin-left: 0.4rem;
   border-radius: 10px;
-  min-width: 13rem;
+  min-width: 12rem;
 }
 
 .cards-section > .card {
@@ -61,11 +61,21 @@ h3 {
 }
 
 .accolades-section {
-  background-image: linear-gradient(180deg, #00496b 2%, #002970 60%);
-  mix-blend-mode: multiply;
   padding: 3rem;
-  margin: 2.5rem 0;
+  margin: 0;
   color: #fff;
+  background-image: url("../../../assets/courthouse-header-fixed-glare.webp");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  mix-blend-mode: normal;
+}
+
+.accolades-logo {
+  /* Ensure the logo has full opacity and normal blending */
+  opacity: 1;
+  mix-blend-mode: normal;
 }
 
 .cover {
@@ -78,7 +88,6 @@ h3 {
 
 .accolades-section .accolades-logo {
   width: 70%;
-  padding: auto 0;
   margin: 0 auto;
 }
 
@@ -105,7 +114,7 @@ h3 {
 .cta-section,
 .testimonial-section {
   padding: 4.5rem;
-  margin: 2.5rem 0;
+  margin: 0;
   color: #000;
 }
 
@@ -222,6 +231,10 @@ footer {
   color: #fff;
 }
 
+.no-blend {
+  mix-blend-mode: normal;
+}
+
 footer caption {
   font-size: 1.5rem;
   margin-bottom: 0;
@@ -250,12 +263,16 @@ footer img {
   }
 
   #InfoSection1 {
-    margin-top: 0 !important;
+    margin-top: 2rem !important;
+  }
+
+  .cta-section {
+    margin: 4rem auto;
   }
 
   .img-section > img {
-    width: 100%;
-    height: 100%;
+    width: 80%;
+    height: 80%;
   }
 
   .mt-5 {
