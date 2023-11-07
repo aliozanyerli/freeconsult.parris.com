@@ -33,7 +33,7 @@
 @media only screen and (max-width: 767px) {
   .offcanvas-header {
     flex-direction: column-reverse;
-    padding-top: 4rem;
+    padding-top: 2rem;
     padding-bottom: 0;
     margin-bottom: 0;
     height: 30vh;
