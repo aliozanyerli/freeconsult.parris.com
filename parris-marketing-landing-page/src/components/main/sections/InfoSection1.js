@@ -6,6 +6,7 @@ const InfoSection1 = () => {
     <section id="InfoSection1" className="d-flex flex-mobile container">
       <div className="info-section">
         <h2>Get the Help You Need After A Car Accident</h2>
+        <hr />
         <p>
           PARRIS Law Firm is home to some of the nation’s most experienced and
           compelling trial lawyers. To get the help you need after a car

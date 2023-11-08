@@ -7,8 +7,8 @@
 }
 
 .cards-section > .card {
-  max-height: 20rem;
-  min-height: 15rem;
+  max-height: 21rem;
+  min-height: 21rem;
   border: none;
 }
 
@@ -479,9 +479,9 @@ footer img {
   .cards-section p {
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
     max-width: 60ch;
     text-align-last: left;
+    word-spacing: -4px;
   }
 
   .cards-section h3 {
@@ -507,11 +507,18 @@ footer img {
 
   #InfoSection1 {
     margin: 4rem auto;
-    width: 85%;
+    width: 90%;
   }
 
   .cards-section > .card {
     width: 15rem;
+  }
+
+  #InfoSection1 .cards-section > .card {
+    width: 15.5rem;
+    padding: 0.8rem;
+    max-height: 18rem;
+    min-height: 18rem;
   }
 
   .results-card-section > .card {

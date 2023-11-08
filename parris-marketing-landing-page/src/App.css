@@ -55,14 +55,13 @@ p {
     text-align: left;
     line-height: 1.5;
     z-index: 100000;
-    word-spacing: 0;
+    word-spacing: -4px;
   }
 
   p {
     word-spacing: -2px;
     text-align: justify;
     text-justify: inter-word;
-    hyphens: auto;
     max-width: 60ch;
     text-align-last: left;
   }
@@ -94,7 +93,7 @@ p {
   }
 
   #results {
-    margin-top: 2rem !important;
+    margin-top: 0 !important;
   }
 
   .card-title {
