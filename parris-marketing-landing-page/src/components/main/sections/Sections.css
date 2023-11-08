@@ -152,12 +152,14 @@ h3 {
 }
 
 .results-info-section hr {
-  margin: 0 auto 1rem auto;
+  margin: 2rem auto 0rem auto;
 }
 
 .results-info-section > h4 {
   max-width: 28.438rem;
   margin: 0 auto;
+  text-align: center;
+  text-align: center;
 }
 
 .results-info-section > p {
@@ -270,12 +272,17 @@ footer img {
 
 @media only screen and (max-width: 767px) {
   .cards-section > .card {
-    max-height: 19rem;
+    max-height: 23rem;
     min-height: 19rem;
   }
 
   .info-section {
     width: 100%;
+  }
+
+  .results-info-section > h4 {
+    text-align: left;
+    text-align: left;
   }
 
   .results-card-section h3 {
@@ -295,7 +302,7 @@ footer img {
   }
 
   .img-section > img {
-    width: 100%;
+    width: 80%;
     height: 80%;
   }
 
@@ -304,8 +311,22 @@ footer img {
     margin: 0 auto;
   }
 
+  .rex-image {
+    width: 100%;
+    height: auto;
+  }
+
+  .info-section2 h3 {
+    margin-top: 0 !important;
+    padding-top: 0;
+  }
+
   .mt-5 {
     margin-top: 1rem !important;
+  }
+
+  .cta-section {
+    padding: 3rem;
   }
 
   .info-section-3 {
@@ -315,8 +336,8 @@ footer img {
 
   .info-section-3-img img {
     width: 80% !important;
-    height: 100% !important;
-    margin-top: 3rem !important;
+    height: 80% !important;
+    margin: 3rem auto !important;
   }
 
   .info-section-3-img {
@@ -363,7 +384,8 @@ footer img {
   }
 
   #testiominials {
-    margin: 1rem auto 2rem auto !important;
+    margin: 1rem auto 0 auto !important;
+    text-align-last: center;
   }
 
   .testimonial-section {
@@ -393,18 +415,15 @@ footer img {
   }
 
   hr {
-    min-height: 4px;
-    width: 47px;
+    min-height: 5px;
+    width: 60px;
     z-index: 6;
-    margin: 2rem auto;
-    background: rgb(226, 164, 109, 1);
-    opacity: 1;
-    margin-bottom: 0.5rem;
+    margin: 1.5rem 2.5rem;
+    background: rgb(226, 164, 109, 0.9);
   }
 
   .results-info-section hr {
-    margin-top: 4rem;
-    margin-bottom: 0;
+    margin: 0.5rem 0 0.5rem 2.5rem;
   }
 
   .btn-container {
@@ -429,6 +448,10 @@ footer img {
     margin: 1.5rem auto;
   }
 
+  .cards-section > .card {
+    max-width: 17.5rem !important;
+  }
+
   footer {
     margin: 0;
     padding: 2rem 0 0 0;
@@ -436,6 +459,13 @@ footer img {
 
   footer figure {
     mix-blend-mode: plus-lighter;
+  }
+
+  footer img {
+    width: 12rem;
+    min-width: 12rem;
+    height: auto;
+    min-height: auto;
   }
 
   .cover {
@@ -446,11 +476,17 @@ footer img {
     background-size: cover;
   }
 
-  .cards-section h3,
   .cards-section p {
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+    max-width: 60ch;
+    text-align-last: left;
+  }
+
+  .cards-section h3 {
     text-align: center;
     text-align-last: center;
-    width: 95% !important;
   }
 
   form h4,
@@ -461,17 +497,12 @@ footer img {
 }
 
 @media (min-width: 1400px) {
-  .aspen-five-star-review,
-  .armando-five-star-review {
-    position: relative;
-  }
-
   .aspen-five-star-review {
-    top: 6.2%;
+    margin-top: 30px;
   }
 
   .armando-five-star-review {
-    top: 13%;
+    top: 55px;
   }
 
   #InfoSection1 {

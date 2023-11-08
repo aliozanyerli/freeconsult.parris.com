@@ -1,13 +1,15 @@
 import React from "react";
 import "../sections/Sections.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 import khailImage from "../../../assets/khail-parris-attorney.webp";
 
 const InfoSection3 = () => {
   return (
     <section className="container d-flex justify-content-center flex-mobile">
       <div className="info-section-3 mt-3">
-        <hr />
         <h4>Complex Claims Require Experienced Attorneys</h4>
+        <hr />
         <p>
           A car accident lawyer doesn't merely offer legal representation. They
           offer comprehensive support, including arranging medical treatment,
@@ -30,11 +32,13 @@ const InfoSection3 = () => {
         </p>
       </div>
       <div className="info-section-3-img d-flex justify-content-center">
-        <img
+        <LazyLoadImage
           src={khailImage}
+          effect="opacity"
           className="d-flex mt-4"
+          width="385"
+          height="480"
           alt="Khail Parris, a PARRIS personal injury attorney."
-          loading="lazy"
         />
       </div>
     </section>

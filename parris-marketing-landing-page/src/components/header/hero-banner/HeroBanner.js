@@ -2,6 +2,8 @@ import React from "react";
 import "../Header.css";
 import Button from "../../button/Button";
 import CallNowButton from "../../button/CallNowButton";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 import accoladesLogos from "../../../assets/network-logo-strip-accolades.svg";
 import IndividualIntervalsCarouselDesktopWrapped from "../../carousel/CarouselDesktopCards";
 import Header from "../Header";
@@ -29,13 +31,13 @@ const HeroBanner = () => {
             <CallNowButton />
           </div>
           <div className="hero-banner-accolades">
-            <img
+            <LazyLoadImage
+              effect="opacity"
               src={accoladesLogos}
-              class="img-fluid hero-banner-accolades-img"
+              className="img-fluid hero-banner-accolades-img"
               width="550"
               height="122"
               alt="PARRIS Law Firm Award Accolades"
-              loading="lazy"
             />
           </div>
         </div>

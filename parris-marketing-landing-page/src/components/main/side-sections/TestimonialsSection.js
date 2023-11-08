@@ -1,5 +1,7 @@
 import React from "react";
 import "../sections/Sections.css";
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/opacity.css'; 
 import fiveStarReview from "../../../assets/5-star-review-for-personal-injury-attorney-law-firm.webp";
 import lisaH from "../../../assets/lisa-parris-law-firm-client-testimonial.webp";
 import armandoA from "../../../assets/armando-parris-law-firm-client-testimonial.webp";
@@ -14,18 +16,15 @@ const TestimonialsSection = () => {
           <h4 id="testiominials">What Clients Say About Us</h4>
         </div>
         <div className="testimonial-section-cards d-flex justify-content-center flex-mobile">
-          <div
-            className="card text-dark bg-white mb-3 shadow-sm"
-            style={{ maxWidth: "18rem" }}
-          >
+          <div className="card text-dark bg-white mb-3 shadow-sm" style={{ maxWidth: "18rem" }}>
             <div className="card-body text-center">
-              <img
+              <LazyLoadImage
+                effect="opacity"
                 src={lisaH}
                 className="round mx-auto d-block"
                 width="90"
                 height="90"
                 alt="PARRIS Law Firm client, Lisa H."
-                loading="lazy"
               />
               <h5 className="card-title">Lisa H.</h5>
               <h6>Car Accident Client</h6>
@@ -36,28 +35,25 @@ const TestimonialsSection = () => {
                   comfortable and took the stress out of the entire situation."
                 </p>
               </blockquote>
-              <img
+              <LazyLoadImage
+                effect="opacity"
                 src={fiveStarReview}
                 className="rounded mx-auto d-block"
                 width="155"
                 height="35"
                 alt="Lisa H. Client's 5 star review"
-                loading="lazy"
               />
             </div>
           </div>
-          <div
-            className="card text-dark bg-white mb-3 shadow-sm"
-            style={{ maxWidth: "18rem" }}
-          >
+          <div className="card text-dark bg-white mb-3 shadow-sm" style={{ maxWidth: "18rem" }}>
             <div className="card-body text-center">
-              <img
+              <LazyLoadImage
+                effect="opacity"
                 src={aspenB}
                 className="round mx-auto d-block"
                 width="90"
                 height="90"
                 alt="PARRIS Law Firm client, Aspen B."
-                loading="lazy"
               />
               <h5 className="card-title">Aspen B.</h5>
               <h6>Car Accident Client</h6>
@@ -68,28 +64,25 @@ const TestimonialsSection = () => {
                   expect to be a part of the family."
                 </p>
               </blockquote>
-              <img
+              <LazyLoadImage
+                effect="opacity"
                 src={fiveStarReview}
                 className="rounded mx-auto d-block aspen-five-star-review"
                 width="155"
                 height="35"
-                alt="Lisa H. Client's 5 star review"
-                loading="lazy"
+                alt="Aspen B. Client's 5 star review"
               />
             </div>
           </div>
-          <div
-            className="card text-dark bg-white mb-3 shadow-sm"
-            style={{ maxWidth: "18rem" }}
-          >
+          <div className="card text-dark bg-white mb-3 shadow-sm" style={{ maxWidth: "18rem" }}>
             <div className="card-body text-center">
-              <img
+              <LazyLoadImage
+                effect="opacity"
                 src={armandoA}
                 className="round mx-auto d-block"
                 width="90"
                 height="90"
                 alt="PARRIS Law Firm client, Armando A."
-                loading="lazy"
               />
               <h5 className="card-title">Armando A.</h5>
               <h6>Car Accident Client</h6>
@@ -100,13 +93,13 @@ const TestimonialsSection = () => {
                   the better."
                 </p>
               </blockquote>
-              <img
+              <LazyLoadImage
+                effect="opacity"
                 src={fiveStarReview}
                 className="rounded mx-auto d-block armando-five-star-review"
                 width="155"
                 height="35"
                 alt="Armando A. Client's 5 star review"
-                loading="lazy"
               />
             </div>
           </div>

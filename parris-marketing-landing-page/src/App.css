@@ -1,3 +1,5 @@
+@import "~bootstrap-icons/font/bootstrap-icons.css";
+
 .App {
   text-align: left;
 }
@@ -57,8 +59,11 @@ p {
   }
 
   p {
+    word-spacing: -2px;
     text-align: justify;
-    word-spacing: 0;
+    text-justify: inter-word;
+    hyphens: auto;
+    max-width: 60ch;
     text-align-last: left;
   }
 
@@ -89,13 +94,13 @@ p {
   }
 
   #results {
-    margin-bottom: 0 !important;
+    margin-top: 2rem !important;
   }
 
   .card-title {
     padding: 0 !important;
     margin: 0 auto 10px auto !important;
-    width: 100%;
+    width: 95% !important;
   }
 
   textarea {

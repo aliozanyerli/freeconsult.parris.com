@@ -1,21 +1,25 @@
 import React from "react";
 import "./Sections.css";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 import rexImage from "../../../assets/r-rex-parris-feature_image.webp";
 
 const InfoSection2 = () => {
   return (
     <section className="container d-flex justify-content-center flex-mobile">
       <div className="img-section">
-        <img
+        <LazyLoadImage
           src={rexImage}
-          className="card-logo d-flex"
+          className="d-flex rex-image"
+          effect="opacity"
           alt="Rex Parris, Attorney at PARRIS Law Firm."
-          loading="lazy"
+          width="506"
+          height="521"
         />
       </div>
       <div className="info-section2 mt-5">
-        <hr />
         <h3>Prepared For Anything</h3>
+        <hr />
         <p>
           For clients to achieve success in the courtroom, it takes an
           experienced team of car accident attorneys to litigate every aspect of

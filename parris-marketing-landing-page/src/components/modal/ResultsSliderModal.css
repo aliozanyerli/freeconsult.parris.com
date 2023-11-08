@@ -10,6 +10,11 @@
   margin: auto;
 }
 
+.offcanvas-title {
+  width: 100%;
+  margin: 1rem auto;
+}
+
 .offcanvas-header p {
   margin-bottom: 0;
 }
@@ -38,7 +43,12 @@
     padding-right: 0;
     padding-bottom: 0;
     margin-bottom: 0;
-    height: 22vh;
+    height: 30vh;
+  }
+
+  .offcanvas-title {
+    width: 70%;
+    margin: 0 auto;
   }
 
   .offcanvas-header h3,

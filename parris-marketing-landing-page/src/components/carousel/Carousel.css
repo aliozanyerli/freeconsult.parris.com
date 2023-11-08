@@ -79,11 +79,12 @@
   }
 
   #carousel-section {
-    min-width: 45rem;
+    min-width: 40rem;
   }
 
   .carousel {
     top: 5%;
+    right: 8%;
   }
 
   .carousel-container {

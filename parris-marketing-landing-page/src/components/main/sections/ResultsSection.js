@@ -5,8 +5,8 @@ const ResultsSection = () => {
   return (
     <section className="container">
       <div className="results-info-section text-center d-flex justify-content-center flex-column">
-        <hr />
         <h4 id="results">Top Results From Our Award-Winning Legal Team</h4>
+        <hr />
         <p>
           Get the most money for your car accident claim. With Billions won for
           clients, we know what it takes to win, and we won't settle for
