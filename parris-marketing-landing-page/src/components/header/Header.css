@@ -44,6 +44,7 @@ header .main-logo {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #002970;
 }
 
 hr {
@@ -94,6 +95,11 @@ hr {
   border-radius: 0;
 }
 
+.hero-banner-accolades {
+  display: flex;
+  mix-blend-mode: plus-lighter;
+}
+
 .hero-banner .card-img,
 .hero-banner .card-img-overlay,
 .hero-banner .card {
@@ -105,18 +111,20 @@ hr {
 @media only screen and (max-width: 767px) {
   .hero-banner-accolades-img {
     margin: 1rem auto;
-    max-width: 80%;
+    max-width: 95%;
     align-items: center;
     justify-content: center;
     padding-bottom: 1.5rem;
   }
 
+  .hero-banner p {
+    text-align: center;
+    text-align-last: center;
+  }
+
   .hero-banner {
-    background-image: url("../../assets/courthouse-header-fixed-glare.webp");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: scroll;
+    background-image: url("../../assets/courthouse-header-fixed-glare.webp");
   }
 
   .hero-banner-accolades {

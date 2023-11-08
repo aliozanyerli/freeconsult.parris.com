@@ -42,7 +42,6 @@ p {
     text-align: left !important;
   }
 
-  h1,
   h2,
   h3,
   h4,
@@ -51,11 +50,23 @@ p {
   caption,
   strong,
   p {
-    text-align: center;
+    text-align: left;
+    line-height: 1.5;
     z-index: 100000;
+    word-spacing: 0;
   }
 
-  h1,
+  p {
+    text-align: justify;
+    word-spacing: 0;
+    text-align-last: left;
+  }
+
+  h1 {
+    text-align: center;
+    margin: 1.5rem auto;
+  }
+
   h2,
   h3,
   h4,
@@ -64,7 +75,7 @@ p {
   caption,
   strong,
   p {
-    width: 90% !important;
+    width: 80% !important;
     margin: 1rem auto !important;
   }
 

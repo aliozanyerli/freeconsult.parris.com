@@ -41,6 +41,12 @@
   margin-bottom: 1rem;
   font-weight: 700;
   font-size: 2.188rem;
+  text-align: left;
+  text-align-last: left;
+}
+
+blockquote {
+  font-style: italic;
 }
 
 .card-logo {
@@ -75,7 +81,7 @@ h3 {
 .accolades-logo {
   /* Ensure the logo has full opacity and normal blending */
   opacity: 1;
-  mix-blend-mode: normal;
+  mix-blend-mode: plus-lighter;
 }
 
 .cover {
@@ -87,7 +93,7 @@ h3 {
 }
 
 .accolades-section .accolades-logo {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
 }
 
@@ -139,7 +145,6 @@ h3 {
 
 .info-section-3-img {
   width: 30rem;
-  height: 34rem;
 }
 
 .results-info-section {
@@ -265,8 +270,8 @@ footer img {
 
 @media only screen and (max-width: 767px) {
   .cards-section > .card {
-    max-height: 22rem;
-    min-height: 22rem;
+    max-height: 19rem;
+    min-height: 19rem;
   }
 
   .info-section {
@@ -294,6 +299,11 @@ footer img {
     height: 80%;
   }
 
+  .img-section {
+    width: 80%;
+    margin: 0 auto;
+  }
+
   .mt-5 {
     margin-top: 1rem !important;
   }
@@ -303,8 +313,14 @@ footer img {
     margin-right: 0;
   }
 
+  .info-section-3-img img {
+    width: 80% !important;
+    height: 100% !important;
+    margin-top: 3rem !important;
+  }
+
   .info-section-3-img {
-    display: none;
+    width: 100% !important;
   }
 
   .results-info-section > p {
@@ -339,6 +355,7 @@ footer img {
 
   .results-card-section .card-header > strong {
     font-size: 2.3rem;
+    text-align: center;
   }
 
   .btn-container .btn-secondary {
@@ -354,6 +371,11 @@ footer img {
     padding: 4rem 0;
   }
 
+  .testimonial-section-cards h5,
+  .testimonial-section-cards h6 {
+    text-align: center;
+  }
+
   .testimonial-section-cards > .card {
     margin: 1.5rem auto;
     min-width: 20rem;
@@ -363,6 +385,7 @@ footer img {
     margin-left: auto;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
+    text-align: center;
   }
 
   .cta-section .btn-container .btn-secondary {
@@ -408,6 +431,11 @@ footer img {
 
   footer {
     margin: 0;
+    padding: 2rem 0 0 0;
+  }
+
+  footer figure {
+    mix-blend-mode: plus-lighter;
   }
 
   .cover {
@@ -416,6 +444,19 @@ footer img {
     background-position: 50%;
     background-repeat: no-repeat;
     background-size: cover;
+  }
+
+  .cards-section h3,
+  .cards-section p {
+    text-align: center;
+    text-align-last: center;
+    width: 95% !important;
+  }
+
+  form h4,
+  form h5 {
+    text-align: center;
+    width: 100% !important;
   }
 }
 

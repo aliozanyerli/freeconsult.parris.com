@@ -29,11 +29,11 @@ const InfoSection3 = () => {
           justice and recovery.
         </p>
       </div>
-      <div className="info-section-3-img">
+      <div className="info-section-3-img d-flex justify-content-center">
         <img
           src={khailImage}
           className="d-flex mt-4"
-          alt="..."
+          alt="Khail Parris, a PARRIS personal injury attorney."
           loading="lazy"
         />
       </div>

@@ -9,7 +9,7 @@ const InfoSection2 = () => {
         <img
           src={rexImage}
           className="card-logo d-flex"
-          alt="..."
+          alt="Rex Parris, Attorney at PARRIS Law Firm."
           loading="lazy"
         />
       </div>

@@ -38,6 +38,13 @@
     font-weight: 700;
   }
 
+  .carousel-caption > p,
+  h2,
+  button {
+    text-align: center;
+    text-align-last: center;
+  }
+
   .active .carousel-caption:hover {
     background-color: transparent !important;
   }

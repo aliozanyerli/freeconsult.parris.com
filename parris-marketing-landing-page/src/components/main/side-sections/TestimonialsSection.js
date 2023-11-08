@@ -29,11 +29,13 @@ const TestimonialsSection = () => {
               />
               <h5 className="card-title">Lisa H.</h5>
               <h6>Car Accident Client</h6>
-              <p className="card-text">
-                PARRIS is the BEST law firm out there. They treated me like
-                family and were always so supportive. They always made me feel
-                comfortable and took the stress out of the entire situation.
-              </p>
+              <blockquote className="blockquote">
+                <p className="card-text">
+                  "PARRIS is the BEST law firm out there. They treated me like
+                  family and were always so supportive. They always made me feel
+                  comfortable and took the stress out of the entire situation."
+                </p>
+              </blockquote>
               <img
                 src={fiveStarReview}
                 className="rounded mx-auto d-block"
@@ -59,11 +61,13 @@ const TestimonialsSection = () => {
               />
               <h5 className="card-title">Aspen B.</h5>
               <h6>Car Accident Client</h6>
-              <p className="card-text">
-                What I loved most about my team was their compassion and
-                patience with me. When you choose PARRIS to represent you,
-                expect to be a part of the family.
-              </p>
+              <blockquote className="blockquote">
+                <p className="card-text">
+                  "What I loved most about my team was their compassion and
+                  patience with me. When you choose PARRIS to represent you,
+                  expect to be a part of the family."
+                </p>
+              </blockquote>
               <img
                 src={fiveStarReview}
                 className="rounded mx-auto d-block aspen-five-star-review"
@@ -89,11 +93,13 @@ const TestimonialsSection = () => {
               />
               <h5 className="card-title">Armando A.</h5>
               <h6>Car Accident Client</h6>
-              <p className="card-text">
-                They became my second family after my car accident. I can't
-                thank them enough for changing mine and my family's lives for
-                the better.
-              </p>
+              <blockquote className="blockquote">
+                <p className="card-text">
+                  "They became my second family after my car accident. I can't
+                  thank them enough for changing mine and my family's lives for
+                  the better."
+                </p>
+              </blockquote>
               <img
                 src={fiveStarReview}
                 className="rounded mx-auto d-block armando-five-star-review"
