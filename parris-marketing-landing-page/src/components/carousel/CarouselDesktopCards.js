@@ -41,7 +41,6 @@ function IndividualIntervalsCarousel() {
   if (error) return <p>PARRIS Case Results: {error.message}</p>;
 
   const results = data.results.edges.map((result) => {
-    console.log(result.node);
     return {
       title: result.node.title,
       excerpt: removeHTMLTags(result.node.excerpt),

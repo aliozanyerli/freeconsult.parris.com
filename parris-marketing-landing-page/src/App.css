@@ -55,11 +55,10 @@ p {
     text-align: left;
     line-height: 1.5;
     z-index: 100000;
-    word-spacing: -4px;
   }
 
   p {
-    word-spacing: -2px;
+    word-spacing: 0px;
     text-align: justify;
     text-justify: inter-word;
     max-width: 60ch;

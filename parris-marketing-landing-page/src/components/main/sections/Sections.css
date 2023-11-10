@@ -478,10 +478,10 @@ footer img {
 
   .cards-section p {
     text-align: justify;
-    text-justify: inter-word;
+    hyphens: auto;
     max-width: 60ch;
     text-align-last: left;
-    word-spacing: -4px;
+    word-spacing: -3px;
   }
 
   .cards-section h3 {
