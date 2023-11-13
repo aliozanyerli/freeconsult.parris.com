@@ -29,15 +29,34 @@ form {
 }
 
 .form-section {
-  border-radius: 10px;
-  padding: 3rem 2rem;
+  border-radius: 15px;
+  padding: 0;
   margin: 0 0 2rem 0;
   width: 40rem;
 }
 
-.form-section label {
+.form-section .card-header,
+.form-section .card-footer {
+  padding: 1.5rem;
+}
+
+form label {
+  font-size: 0.75rem;
+}
+
+.form-floating > .form-control,
+.form-floating > .form-control-plaintext {
+  padding: 0rem 1rem;
+}
+
+.form-section .card-body {
+  padding: 2rem 5rem;
+}
+
+.card-header .form-section label {
   font-weight: 600;
-  margin: 0.8rem 0;
+  margin: 0;
+  padding: 0.5rem 1rem;
   color: #000;
 }
 
@@ -46,7 +65,7 @@ form {
 }
 
 button[type="submit"] {
-  margin-top: 2rem;
+  margin-top: 0;
 }
 
 form h4,
@@ -65,20 +84,53 @@ form h5 {
   font-weight: 700;
 }
 
+.card {
+  border: none;
+}
+
+form .card-header {
+  padding: 0;
+  margin: 0;
+}
+
 @media only screen and (max-width: 767px) {
   label[htmlFor="message"] {
     margin-bottom: 0;
+  }
+
+  .form-section .card-header {
+    padding: 0;
+  }
+
+  .form-section .card-body {
+    padding: 0rem 1.5rem;
+  }
+
+  button[type="submit"] {
+    margin-top: 0;
+    width: 60%;
+    margin: 0rem auto;
+  }
+
+  .form-section label {
+    font-size: 0.8rem;
   }
 
   #form {
     width: 100%;
   }
 
+  .form-floating > .form-control,
+  .form-floating > .form-control-plaintext,
+  .form-floating > .form-select {
+    line-height: 4;
+  }
+
   .form-section {
-    border-radius: 10px;
-    padding: 1rem 1rem 3rem 1rem;
-    margin: 4rem 0;
-    width: 40rem;
+    border-radius: 15px;
+    padding: 0rem;
+    margin: 4rem auto;
+    width: 90%;
   }
 
   textarea {

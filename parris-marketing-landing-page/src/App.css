@@ -44,25 +44,13 @@ p {
     text-align: left !important;
   }
 
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  caption,
-  strong,
-  p {
-    text-align: left;
-    line-height: 1.5;
-    z-index: 100000;
-  }
-
   p {
     word-spacing: 0px;
-    text-align: justify;
-    text-justify: inter-word;
+    text-align: justify !important;
     max-width: 60ch;
     text-align-last: left;
+    hyphens: auto !important;
+    word-spacing: -1px;
   }
 
   h1 {
@@ -80,6 +68,8 @@ p {
   p {
     width: 80% !important;
     margin: 1rem auto !important;
+    line-height: 1.5;
+    z-index: 100000;
   }
 
   .card-header strong {

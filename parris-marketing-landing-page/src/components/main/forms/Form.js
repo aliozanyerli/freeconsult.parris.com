@@ -1,11 +1,11 @@
 import React, { useState, useEffect, Suspense } from "react";
 import "./Form.css";
-import "cleave.js/dist/addons/cleave-phone.us";
-import Cleave from "cleave.js/react";
 import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
 import Form from "react-bootstrap/Form";
-
-const Modal = React.lazy(() => import("react-bootstrap/Modal"));
+import FloatingLabel from "react-bootstrap/FloatingLabel";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -53,17 +53,30 @@ const ContactForm = () => {
     }
   }, []);
 
+  const formatPhoneNumber = (value) => {
+    if (!value) return value;
+    const phoneNumber = value.replace(/[^\d]/g, "");
+    const phoneNumberLength = phoneNumber.length;
+    if (phoneNumberLength < 4) return phoneNumber;
+    if (phoneNumberLength < 7) {
+      return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`;
+    }
+    return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(
+      3,
+      6,
+    )}-${phoneNumber.slice(6, 10)}`;
+  };
+
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    let isValid = true;
 
     if (name === "phone_number") {
-      isValid = /^\+?(\d.*){3,}$/.test(value); // Adjust regex as per your requirement
+      const formattedPhoneNumber = formatPhoneNumber(value);
+      setFormData({
+        ...formData,
+        [name]: formattedPhoneNumber,
+      });
     } else {
-      isValid = /^[a-zA-Z\s]*$/.test(value);
-    }
-
-    if (isValid || value === "") {
       setFormData({
         ...formData,
         [name]: value,
@@ -71,19 +84,27 @@ const ContactForm = () => {
     }
   };
 
+  const isPhoneNumberValid = (phoneNumber) => {
+    return /^\(\d{3}\) \d{3}-\d{4}$/.test(phoneNumber);
+  };
+
   const handleSubmit = async (event) => {
     setValidated(true);
     const form = event.currentTarget;
     event.preventDefault();
 
-    if (form.checkValidity() === false) {
+    if (
+      !isPhoneNumberValid(formData.phone_number) ||
+      form.checkValidity() === false
+    ) {
       event.stopPropagation();
-    } else {
-      setFormSubmitted(true);
-      setTimeout(() => {
-        handleShow();
-      }, 500);
+      return;
     }
+
+    setFormSubmitted(true);
+    setTimeout(() => {
+      handleShow();
+    }, 500);
 
     try {
       const ipResponse = await fetch("https://api.ipify.org?format=json");
@@ -128,129 +149,132 @@ const ContactForm = () => {
 
   return (
     <Suspense fallback={<div>Loading...</div>}>
-      <Form
-        noValidate
-        validated={validated}
-        className={`row g-3 form-section shadow-sm bg-dark bg-gradient ${
-          formSubmitted ? "fade-out" : ""
-        }`}
-        onSubmit={handleSubmit}
-      >
-        <div className="col-md-12 text-center">
-          <h4>Contact Us</h4>
-          <h5 id="form">Free Case Evaluation</h5>
-        </div>
-        <div className="col-md-6">
-          <Form.Label htmlFor="first_name" className="form-label">
-            First Name
-          </Form.Label>
-          <Form.Control
-            name="first_name"
-            type="text"
-            required
-            onChange={handleInputChange}
-            pattern="[A-Za-z\s]*"
-            isInvalid={validated && formData.first_name === ""}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please provide a first name.
-          </Form.Control.Feedback>
-        </div>
-        <div className="col-md-6">
-          <Form.Label htmlFor="last_name" className="form-label">
-            Last Name
-          </Form.Label>
-          <Form.Control
-            name="last_name"
-            type="text"
-            required
-            onChange={handleInputChange}
-            pattern="[A-Za-z\s]*"
-            isInvalid={validated && formData.last_name === ""}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please proved a last name.
-          </Form.Control.Feedback>
-        </div>
-        <div className="col-md-6">
-          <Form.Label htmlFor="email" className="form-label">
-            Email
-          </Form.Label>
-          <Form.Control
-            name="email"
-            type="email"
-            required
-            pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$"
-            onChange={handleInputChange}
-            isInvalid={validated && formData.email === ""}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please provide an email address.
-          </Form.Control.Feedback>
-        </div>
-        <div className="col-md-6">
-          <Form.Label htmlFor="phone_number" className="form-label">
-            Phone Number
-          </Form.Label>
-          <Cleave
-            name="phone_number"
-            type="tel"
-            className="form-control"
-            id="phone_number"
-            options={{ phone: true, phoneRegionCode: "US" }}
-            pattern="^\+?( ?[\(]?[\-]?[0-9][\)]?){6,13}$"
-            required
-            onChange={handleInputChange}
-            isInvalid={validated && formData.phone_number === ""}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please provide a phone number.
-          </Form.Control.Feedback>
-        </div>
-        <div className="col-12">
-          <Form.Label htmlFor="message" className="form-label">
-            Tell Us About Your Case
-          </Form.Label>
-          <Form.Control
-            as="textarea"
-            name="message"
-            style={{ height: "100px" }}
-            required
-            onChange={handleInputChange}
-            isInvalid={validated && formData.message === ""}
-          />
-          <Form.Control.Feedback type="invalid">
-            Please tell use about your case.
-          </Form.Control.Feedback>
-        </div>
-        <Form.Control
-          type="hidden"
-          id="gclid"
-          name="gclid"
-          value={gclid}
-          onChange={handleInputChange}
-        />
-        <div className="col-12">
-          <Button type="submit" variant="secondary" disabled={apiError}>
-            Submit
-          </Button>
+      <Card className="text-center">
+        <Form
+          noValidate
+          validated={validated}
+          className={`row g-3 form-section shadow-sm bg-dark bg-gradient ${
+            formSubmitted ? "fade-out" : ""
+          }`}
+          onSubmit={handleSubmit}
+        >
+          <Card.Header>
+            <div className="col-md-12 text-center">
+              <h4>Contact Us</h4>
+              <h5 id="form">Free Case Evaluation</h5>
+            </div>
+          </Card.Header>
+          <Card.Body>
+            <Row className="g-3">
+              <Col md={6}>
+                <FloatingLabel controlId="first_name" label="First Name">
+                  <Form.Control
+                    name="first_name"
+                    type="text"
+                    required
+                    onChange={handleInputChange}
+                    pattern="[A-Za-z\s]*"
+                    isInvalid={validated && formData.first_name === ""}
+                    placeholder="First Name"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a first name.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Col>
 
-          <Modal show={show} onHide={handleClose} animation={true}>
-            <Modal.Header closeButton>
-              <Modal.Title>Thank you!</Modal.Title>
-            </Modal.Header>
-            <Modal.Body>
-              We appreciate your submission, someone from our team will reach
-              out soon!
-            </Modal.Body>
-            <Modal.Footer className="d-flex justify-content-center">
-              <Button variant="secondary" onClick={handleClose}>
-                Close
+              <Col md={6}>
+                <FloatingLabel controlId="last_name" label="Last Name">
+                  <Form.Control
+                    name="last_name"
+                    type="text"
+                    required
+                    onChange={handleInputChange}
+                    pattern="[A-Za-z\s]*"
+                    isInvalid={validated && formData.last_name === ""}
+                    placeholder="Last Name"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a last name.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Col>
+
+              <Col md={6}>
+                <FloatingLabel controlId="email" label="Email">
+                  <Form.Control
+                    name="email"
+                    type="email"
+                    required
+                    pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$"
+                    onChange={handleInputChange}
+                    isInvalid={validated && formData.email === ""}
+                    placeholder="Email"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide an email address.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Col>
+
+              <Col md={6}>
+                <FloatingLabel controlId="phone_number" label="Phone Number">
+                  <Form.Control
+                    name="phone_number"
+                    type="tel"
+                    required
+                    onChange={handleInputChange}
+                    value={formData.phone_number}
+                    isInvalid={
+                      validated && !isPhoneNumberValid(formData.phone_number)
+                    }
+                    placeholder="Phone Number"
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please provide a phone number.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Col>
+
+              <Col md={12}>
+                <FloatingLabel
+                  controlId="message"
+                  label="Tell Us About Your Case"
+                  className="mb-3"
+                >
+                  <Form.Control
+                    as="textarea"
+                    name="message"
+                    placeholder="Your Message"
+                    style={{ height: "100px" }}
+                    required
+                    onChange={handleInputChange}
+                    isInvalid={validated && formData.message === ""}
+                  />
+                  <Form.Control.Feedback type="invalid">
+                    Please tell us about your case.
+                  </Form.Control.Feedback>
+                </FloatingLabel>
+              </Col>
+            </Row>
+
+            <Form.Control
+              type="hidden"
+              id="gclid"
+              name="gclid"
+              value={gclid}
+              onChange={handleInputChange}
+            />
+          </Card.Body>
+          <Card.Footer>
+            <div className="col-12">
+              <Button type="submit" variant="secondary" disabled={apiError}>
+                Submit
               </Button>
-            </Modal.Footer>
-          </Modal>
-        </div>
-      </Form>
+            </div>
+          </Card.Footer>
+        </Form>
+      </Card>
     </Suspense>
   );
 };
