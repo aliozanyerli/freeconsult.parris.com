@@ -26,8 +26,6 @@ const removeHTMLTags = (str) => {
 
 const IndividualIntervalsCarousel = () => {
   const { error, data } = useQuery(getResults);
-
-  // Fallback content while waiting for data
   if (!data) {
     return (
       <section

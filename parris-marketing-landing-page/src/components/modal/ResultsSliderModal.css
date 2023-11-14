@@ -46,6 +46,10 @@
     height: 25vh;
   }
 
+  .offcanvas-body p {
+    word-spacing: -3px;
+  }
+
   .offcanvas-title {
     width: 70%;
     margin: 0 auto;
@@ -60,8 +64,9 @@
   }
 
   .btn-close {
-    padding: 0.5rem !important;
+    padding: 1rem !important;
     font-size: 1.5rem;
+    background-color: #eaeaeb;
     background-image: url("../../../node_modules/bootstrap-icons/icons/arrow-up-circle.svg");
   }
 

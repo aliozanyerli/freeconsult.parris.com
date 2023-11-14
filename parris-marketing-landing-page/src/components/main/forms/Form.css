@@ -145,10 +145,6 @@ form .card-header {
     padding: 0;
   }
 
-  .form-section textarea {
-    line-height: 4 !important;
-  }
-
   .form-section .card-body {
     padding: 0rem 1.5rem;
   }
@@ -173,11 +169,17 @@ form .card-header {
     line-height: 1.5;
   }
 
+  .form-floating > .form-control-plaintext:focus,
+  .form-floating > .form-control-plaintext:not(:placeholder-shown),
+  .form-floating > .form-control:focus,
+  .form-floating > .form-control:not(:placeholder-shown) {
+    padding-top: 1.625rem !important;
+  }
+
   .form-section {
     border-radius: 15px;
     padding: 0rem;
-    margin: auto;
-    width: 90%;
+    width: 100%;
   }
 
   textarea {

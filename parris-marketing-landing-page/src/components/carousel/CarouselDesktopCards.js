@@ -3,7 +3,7 @@ import Carousel from "react-bootstrap/Carousel";
 import "./Carousel.css";
 import getResults from "../results/Results";
 import { useQuery } from "@apollo/client";
-import ResultsSliderModal from "../modal/ResultsSliderModal";
+import ResultsSliderModal from "../modal/ResultsSliderModal.js";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -36,11 +36,27 @@ const removeHTMLTags = (str) => {
 function IndividualIntervalsCarousel() {
   const { loading, error, data } = useQuery(getResults);
 
-  if (loading)
-    return <p style={{ display: "none" }}>Loading PARRIS results...</p>;
+  if (loading || !data) {
+    return (
+      <section
+        id="carousel-section"
+        className="carousel-section no-show-mobile"
+      >
+        <Carousel>
+          <Carousel.Item>
+            <Carousel.Caption className="shadow">
+              <h2>Loading...</h2>
+              <p>Please wait while we load the data.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </section>
+    );
+  }
+
   if (error) return <p>PARRIS Case Results: {error.message}</p>;
 
-  const results = data.results.edges.map((result) => {
+  const results = data.results.edges.map((result, index) => {
     return {
       title: result.node.title,
       excerpt: removeHTMLTags(result.node.excerpt),
@@ -62,7 +78,7 @@ function IndividualIntervalsCarousel() {
             <Carousel.Caption className="shadow">
               <h2>{result.title}</h2>
               <p>{result.excerpt}</p>
-              <ResultsSliderModal result={result}></ResultsSliderModal>
+              <ResultsSliderModal result={result} />
             </Carousel.Caption>
           </Carousel.Item>
         ))}
