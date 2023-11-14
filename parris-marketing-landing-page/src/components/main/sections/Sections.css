@@ -271,6 +271,10 @@ footer img {
 }
 
 @media only screen and (max-width: 767px) {
+  .carousel-caption > p {
+    text-align: cemter !important;
+  }
+
   .cards-section > .card {
     max-height: 23rem;
     min-height: 19rem;
@@ -477,11 +481,12 @@ footer img {
   }
 
   .cards-section p {
-    text-align: justify;
-    hyphens: auto;
+    text-align: justify !important;
+    hyphens: auto !important;
     max-width: 60ch;
     text-align-last: left;
     word-spacing: -3px;
+    word-wrap: break-word;
   }
 
   .cards-section h3 {

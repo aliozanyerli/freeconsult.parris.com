@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
+import Spinner from "react-bootstrap/Spinner";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -22,7 +23,8 @@ const ContactForm = () => {
   const [validated, setValidated] = useState(false);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [apiError, setApiError] = useState(false);
-
+  const [showSpinner, setShowSpinner] = useState(false);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
@@ -103,8 +105,16 @@ const ContactForm = () => {
 
     setFormSubmitted(true);
     setTimeout(() => {
-      handleShow();
+      setShowSpinner(true);
     }, 500);
+
+    setTimeout(() => {
+      setShowSpinner(false);
+    }, 2500); //2500
+
+    setTimeout(() => {
+      setShowSuccessMessage(true);
+    }, 3000);
 
     try {
       const ipResponse = await fetch("https://api.ipify.org?format=json");
@@ -135,7 +145,7 @@ const ContactForm = () => {
         console.log("Data sent successfully to the webhook:", jsonResponse);
       } else {
         console.error(
-          "Failed to send datat to the webhook. Status code:",
+          "Failed to send data Zappier. Status code:",
           response.statusText,
         );
         setApiError(true);
@@ -148,134 +158,158 @@ const ContactForm = () => {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <Card className="text-center">
-        <Form
-          noValidate
-          validated={validated}
-          className={`row g-3 form-section shadow-sm bg-dark bg-gradient ${
-            formSubmitted ? "fade-out" : ""
-          }`}
-          onSubmit={handleSubmit}
-        >
-          <Card.Header>
-            <div className="col-md-12 text-center">
-              <h4>Contact Us</h4>
-              <h5 id="form">Free Case Evaluation</h5>
-            </div>
-          </Card.Header>
-          <Card.Body>
-            <Row className="g-3">
-              <Col md={6}>
-                <FloatingLabel controlId="first_name" label="First Name">
-                  <Form.Control
-                    name="first_name"
-                    type="text"
-                    required
-                    onChange={handleInputChange}
-                    pattern="[A-Za-z\s]*"
-                    isInvalid={validated && formData.first_name === ""}
-                    placeholder="First Name"
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a first name.
-                  </Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
+    <div className="form-section">
+      {showSpinner && (
+        <div className="spinner-container d-flex">
+          <Spinner animation="border" />
+        </div>
+      )}
 
-              <Col md={6}>
-                <FloatingLabel controlId="last_name" label="Last Name">
-                  <Form.Control
-                    name="last_name"
-                    type="text"
-                    required
-                    onChange={handleInputChange}
-                    pattern="[A-Za-z\s]*"
-                    isInvalid={validated && formData.last_name === ""}
-                    placeholder="Last Name"
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a last name.
-                  </Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
+      {showSuccessMessage && (
+        <aside className="success-message">
+          <h5>Thank You!</h5>
+          <p>
+            We appreciate your form submission, someone from our team will reach
+            out to you soon!
+          </p>
+        </aside>
+      )}
 
-              <Col md={6}>
-                <FloatingLabel controlId="email" label="Email">
-                  <Form.Control
-                    name="email"
-                    type="email"
-                    required
-                    pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$"
-                    onChange={handleInputChange}
-                    isInvalid={validated && formData.email === ""}
-                    placeholder="Email"
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide an email address.
-                  </Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
+      <Suspense fallback={<div>Loading...</div>}>
+        {!showSuccessMessage && (
+          <Card className={`text-center ${formSubmitted ? "fade-out" : ""}`}>
+            <Form
+              noValidate
+              validated={validated}
+              className={`row g-3 form-section shadow-sm bg-dark bg-gradient ${
+                formSubmitted ? "fade-out" : ""
+              }`}
+              onSubmit={handleSubmit}
+            >
+              <Card.Header>
+                <div className="col-md-12 text-center">
+                  <h4>Contact Us</h4>
+                  <h5 id="form">Free Case Evaluation</h5>
+                </div>
+              </Card.Header>
+              <Card.Body>
+                <Row className="g-3">
+                  <Col md={6}>
+                    <FloatingLabel controlId="first_name" label="First Name">
+                      <Form.Control
+                        name="first_name"
+                        type="text"
+                        required
+                        onChange={handleInputChange}
+                        pattern="[A-Za-z\s]*"
+                        isInvalid={validated && formData.first_name === ""}
+                        placeholder="First Name"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please provide a first name.
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  </Col>
 
-              <Col md={6}>
-                <FloatingLabel controlId="phone_number" label="Phone Number">
-                  <Form.Control
-                    name="phone_number"
-                    type="tel"
-                    required
-                    onChange={handleInputChange}
-                    value={formData.phone_number}
-                    isInvalid={
-                      validated && !isPhoneNumberValid(formData.phone_number)
-                    }
-                    placeholder="Phone Number"
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please provide a phone number.
-                  </Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
+                  <Col md={6}>
+                    <FloatingLabel controlId="last_name" label="Last Name">
+                      <Form.Control
+                        name="last_name"
+                        type="text"
+                        required
+                        onChange={handleInputChange}
+                        pattern="[A-Za-z\s]*"
+                        isInvalid={validated && formData.last_name === ""}
+                        placeholder="Last Name"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please provide a last name.
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  </Col>
 
-              <Col md={12}>
-                <FloatingLabel
-                  controlId="message"
-                  label="Tell Us About Your Case"
-                  className="mb-3"
-                >
-                  <Form.Control
-                    as="textarea"
-                    name="message"
-                    placeholder="Your Message"
-                    style={{ height: "100px" }}
-                    required
-                    onChange={handleInputChange}
-                    isInvalid={validated && formData.message === ""}
-                  />
-                  <Form.Control.Feedback type="invalid">
-                    Please tell us about your case.
-                  </Form.Control.Feedback>
-                </FloatingLabel>
-              </Col>
-            </Row>
+                  <Col md={6}>
+                    <FloatingLabel controlId="email" label="Email">
+                      <Form.Control
+                        name="email"
+                        type="email"
+                        required
+                        pattern="^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9_\-]+[.]+[a-zA-Z0-9\-.]{2,61}$"
+                        onChange={handleInputChange}
+                        isInvalid={validated && formData.email === ""}
+                        placeholder="Email"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please provide an email address.
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  </Col>
 
-            <Form.Control
-              type="hidden"
-              id="gclid"
-              name="gclid"
-              value={gclid}
-              onChange={handleInputChange}
-            />
-          </Card.Body>
-          <Card.Footer>
-            <div className="col-12">
-              <Button type="submit" variant="secondary" disabled={apiError}>
-                Submit
-              </Button>
-            </div>
-          </Card.Footer>
-        </Form>
-      </Card>
-    </Suspense>
+                  <Col md={6}>
+                    <FloatingLabel
+                      controlId="phone_number"
+                      label="Phone Number"
+                    >
+                      <Form.Control
+                        name="phone_number"
+                        type="tel"
+                        required
+                        onChange={handleInputChange}
+                        value={formData.phone_number}
+                        isInvalid={
+                          validated &&
+                          !isPhoneNumberValid(formData.phone_number)
+                        }
+                        placeholder="Phone Number"
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please provide a phone number.
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  </Col>
+
+                  <Col md={12}>
+                    <FloatingLabel
+                      controlId="message"
+                      label="Tell Us About Your Case"
+                      className="mb-3"
+                    >
+                      <Form.Control
+                        as="textarea"
+                        name="message"
+                        placeholder="Your Message"
+                        style={{ height: "100px" }}
+                        required
+                        onChange={handleInputChange}
+                        isInvalid={validated && formData.message === ""}
+                      />
+                      <Form.Control.Feedback type="invalid">
+                        Please tell us about your case.
+                      </Form.Control.Feedback>
+                    </FloatingLabel>
+                  </Col>
+                </Row>
+
+                <Form.Control
+                  type="hidden"
+                  id="gclid"
+                  name="gclid"
+                  value={gclid}
+                  onChange={handleInputChange}
+                />
+              </Card.Body>
+              <Card.Footer>
+                <div className="col-12">
+                  <Button type="submit" variant="secondary" disabled={apiError}>
+                    Submit
+                  </Button>
+                </div>
+              </Card.Footer>
+            </Form>
+          </Card>
+        )}
+      </Suspense>
+    </div>
   );
 };
 

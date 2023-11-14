@@ -2,14 +2,44 @@ form {
   color: #000 !important;
 }
 
-.fade-out {
-  animation: fadeOut 1s forwards;
+.spinner-container {
+  /* Center the spinner */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 !important;
+  margin: 0 !important;
+  position: relative !important;
+  top: 40% !important;
 }
 
-.btn-close {
-  color: #fff;
-  border-color: #fff;
-  background-color: #fff;
+.success-message {
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.success-message h5 {
+  font-size: 1.5rem !important;
+  font-weight: bold;
+  color: green;
+}
+
+.success-message p {
+  color: green;
+  word-spacing: -3px;
+}
+
+.fade-out {
+  animation: fadeOut 1s;
+  opacity: 0;
+  transition:
+    visibility 0s 1s,
+    opacity 1s linear;
+}
+
+.form-section {
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes fadeOut {
@@ -18,14 +48,7 @@ form {
   }
   to {
     opacity: 0;
-    display: none;
   }
-}
-
-.modal-content {
-  background: #212529;
-  color: #fff;
-  z-index: 10000000;
 }
 
 .form-section {
@@ -98,6 +121,15 @@ form .card-header {
     margin-bottom: 0;
   }
 
+  .spinner-border {
+    --bs-spinner-width: 7rem;
+    --bs-spinner-height: 7rem;
+    --bs-spinner-border-width: 0.5em;
+    margin: 0rem auto;
+    color: rgba(226, 164, 109, 1) !important;
+    padding: 0;
+  }
+
   .form-floating > .form-control-plaintext:focus,
   .form-floating > .form-control-plaintext:not(:placeholder-shown),
   .form-floating > .form-control:focus,
@@ -105,8 +137,16 @@ form .card-header {
     padding-top: 1.3rem;
   }
 
+  .form-section {
+    margin: 2rem auto !important;
+  }
+
   .form-section .card-header {
     padding: 0;
+  }
+
+  .form-section textarea {
+    line-height: 4 !important;
   }
 
   .form-section .card-body {
@@ -136,7 +176,7 @@ form .card-header {
   .form-section {
     border-radius: 15px;
     padding: 0rem;
-    margin: 4rem auto;
+    margin: auto;
     width: 90%;
   }
 

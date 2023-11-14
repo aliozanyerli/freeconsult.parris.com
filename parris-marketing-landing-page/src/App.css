@@ -46,7 +46,7 @@ p {
 
   p {
     word-spacing: 0px;
-    text-align: justify !important;
+    text-align: justify;
     max-width: 60ch;
     text-align-last: left;
     hyphens: auto !important;

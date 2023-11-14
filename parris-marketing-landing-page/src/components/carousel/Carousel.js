@@ -1,19 +1,16 @@
-import React, { useState, useEffect, useCallback, Suspense, lazy } from "react";
+import React from "react";
 import Carousel from "react-bootstrap/Carousel";
 import "./Carousel.css";
 import getResults from "../results/Results";
 import { useQuery } from "@apollo/client";
-
-const ResultsSliderModal = lazy(() => import("../modal/ResultsSliderModal"));
+import ResultsSliderModal from "../modal/ResultsSliderModal.js";
 
 function ErrorBoundary({ children }) {
-  const [hasError, setHasError] = useState(false);
+  const [hasError, setHasError] = React.useState(false);
 
-  const getDerivedStateFromError = useCallback(() => {
+  const getDerivedStateFromError = () => {
     setHasError(true);
-  }, []);
-
-  useEffect(() => {}, []);
+  };
 
   if (hasError) {
     return <h2>Something went wrong.</h2>;
@@ -27,27 +24,40 @@ const removeHTMLTags = (str) => {
   return doc.body.textContent || "";
 };
 
-const IndividualIntervalsCarousel = React.memo(() => {
-  const { loading, error, data } = useQuery(getResults);
+const IndividualIntervalsCarousel = () => {
+  const { error, data } = useQuery(getResults);
 
-  const results = React.useMemo(() => {
-    return data?.results.edges.map((edge) => {
-      const { node } = edge;
-      return {
-        title: node.title,
-        excerpt: removeHTMLTags(node.excerpt),
-        content: removeHTMLTags(node.content),
-        hasVerdict: node.resultsSettings.hasVerdict,
-        categories:
-          node.categories.edges.length > 0
-            ? node.categories.edges[0].node.name
-            : null,
-        menuOrder: node.menuOrder,
-      };
-    });
-  }, [data]);
+  // Fallback content while waiting for data
+  if (!data) {
+    return (
+      <section
+        id="carousel-section"
+        className="carousel-section no-show-desktop"
+      >
+        <Carousel className="container p-4">
+          <Carousel.Caption>
+            <p>Loading...</p>
+          </Carousel.Caption>
+        </Carousel>
+      </section>
+    );
+  }
 
-  if (loading) return <></>;
+  const results = data?.results.edges.map((edge) => {
+    const { node } = edge;
+    return {
+      title: node.title,
+      excerpt: removeHTMLTags(node.excerpt),
+      content: removeHTMLTags(node.content),
+      hasVerdict: node.resultsSettings.hasVerdict,
+      categories:
+        node.categories.edges.length > 0
+          ? node.categories.edges[0].node.name
+          : null,
+      menuOrder: node.menuOrder,
+    };
+  });
+
   if (error) return <p>Error: {error.message}</p>;
 
   return (
@@ -58,18 +68,15 @@ const IndividualIntervalsCarousel = React.memo(() => {
             <Carousel.Caption>
               <h2>{result.title}</h2>
               <p>{result.excerpt}</p>
-              <Suspense fallback={<div>Loading...</div>}>
-                <ResultsSliderModal result={result} />
-              </Suspense>
+              <ResultsSliderModal result={result} />
             </Carousel.Caption>
           </Carousel.Item>
         ))}
       </Carousel>
     </section>
   );
-});
+};
 
-// Wrap the carousel in the error boundary
 function IndividualIntervalsCarouselWrapped() {
   return (
     <ErrorBoundary>
