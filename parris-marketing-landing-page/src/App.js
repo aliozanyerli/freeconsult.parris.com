@@ -21,9 +21,6 @@ const ResultsSection = lazy(
 const TestimonialsSection = lazy(
   () => import("./components/main/side-sections/TestimonialsSection"),
 );
-const FormSection = lazy(
-  () => import("./components/main/sections/FormSection"),
-);
 
 const client = new ApolloClient({
   uri: "https://mig.parris.com/graphql",
