@@ -71,6 +71,10 @@ p {
     z-index: 100000;
   }
 
+  .card-text {
+    width: 95% !important;
+  }
+
   .card-header strong {
     margin: 0 auto !important;
   }
@@ -88,6 +92,7 @@ p {
     padding: 0 !important;
     margin: 0 auto 10px auto !important;
     width: 95% !important;
+    font-size: 18px !important;
   }
 
   textarea {

@@ -302,7 +302,7 @@ footer img {
   }
 
   .results-card-section h3 {
-    font-size: 1.5rem !important;
+    font-size: 18px !important;
   }
 
   .results-card-section p {
@@ -391,7 +391,7 @@ footer img {
   }
 
   .results-card-section .card-header > strong {
-    font-size: 2.3rem;
+    font-size: 26px;
     text-align: center;
   }
 
@@ -526,15 +526,19 @@ footer img {
     width: 90%;
   }
 
+  .cards-section .pi-card .card-text {
+    font-size: 15px;
+  }
+
   .cards-section > .card {
     width: 15rem;
   }
 
   #InfoSection1 .cards-section > .card {
-    width: 15.5rem;
-    padding: 0.8rem;
-    max-height: 18rem;
-    min-height: 18rem;
+    width: 15rem;
+    padding: 0 0.5rem;
+    max-height: 17.5rem;
+    min-height: 17.5rem;
   }
 
   .results-card-section > .card {

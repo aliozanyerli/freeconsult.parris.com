@@ -5,7 +5,9 @@ const InfoSection1 = () => {
   return (
     <section id="InfoSection1" className="d-flex flex-mobile container">
       <div className="info-section">
-        <h2>Get the Help You Need After A Car Accident</h2>
+        <h2>
+          Pay No Fees Until <br /> We Win
+        </h2>
         <hr />
         <p>
           PARRIS Law Firm is home to some of the nation’s most experienced and
@@ -25,8 +27,9 @@ const InfoSection1 = () => {
           <div className="card-body">
             <h3 className="card-title">Car Accidents</h3>
             <p className="card-text">
-              Unplanned mishaps involving sedans and compact cars, leading to
-              physical injuries, financial hurdles, and emotional stress.
+              Depending on the severity of your injuries, you may be entitled to
+              compensation for medical bills, lost wages, future income, and
+              more.
             </p>
           </div>
         </div>
@@ -40,9 +43,10 @@ const InfoSection1 = () => {
           <div className="card-body">
             <h3 className="card-title">Semi-Truck Collisions</h3>
             <p className="card-text">
-              Unexpected encounters with big rigs and 18-wheelers, leading to
-              severe physical injuries, financial setbacks, and emotional
-              turmoil.
+              Crashes with big rigs often result in severe injuries for
+              occupants of smaller cars. Insurance companies know this and will
+              do everything they can to pay you as little as possible. Don’t let
+              them. Hire a lawyer.
             </p>
           </div>
         </div>
@@ -56,8 +60,9 @@ const InfoSection1 = () => {
           <div className="card-body">
             <h3 className="card-title">Motorcycle Accidents</h3>
             <p className="card-text">
-              Sudden misfortunes on the road involving motorcycles, resulting in
-              physical trauma, financial burden, and emotional disarray.
+              Injuries from motorcycle crashes are some of the worst out there.
+              Get help fighting for every dollar it’ll take to make you whole
+              again.
             </p>
           </div>
         </div>
