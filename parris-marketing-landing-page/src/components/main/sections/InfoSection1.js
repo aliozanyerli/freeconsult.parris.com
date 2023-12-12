@@ -10,10 +10,10 @@ const InfoSection1 = () => {
         </h2>
         <hr />
         <p>
-          PARRIS Law Firm is home to some of the nation’s most experienced and
-          compelling trial lawyers. To get the help you need after a car
-          accident, it takes the best team of trial attorneys fighting by your
-          side.
+          All of our cases are on a contingency fee basis, which means if we
+          don’t win, you don’t pay. We advance all the costs necessary to
+          litigate your case. Once your case is resolved, our fee is a
+          percentage of the result we’ve obtained for you.
         </p>
       </div>
       <div className="cards-section d-flex flex-mobile justify-content-center align-items-center">
