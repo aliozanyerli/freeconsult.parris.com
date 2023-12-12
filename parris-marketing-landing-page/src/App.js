@@ -9,20 +9,20 @@ import Footer from "./components/footer/Footer";
 import IndividualIntervalsCarousel from "./components/carousel/Carousel";
 
 // Lazy loaded components
-const InfoSection2 = lazy(() =>
-  import("./components/main/sections/InfoSection2"),
+const InfoSection2 = lazy(
+  () => import("./components/main/sections/InfoSection2"),
 );
-const InfoSection3 = lazy(() =>
-  import("./components/main/sections/InfoSection3"),
+const InfoSection3 = lazy(
+  () => import("./components/main/sections/InfoSection3"),
 );
-const ResultsSection = lazy(() =>
-  import("./components/main/sections/ResultsSection"),
+const ResultsSection = lazy(
+  () => import("./components/main/sections/ResultsSection"),
 );
-const TestimonialsSection = lazy(() =>
-  import("./components/main/side-sections/TestimonialsSection"),
+const TestimonialsSection = lazy(
+  () => import("./components/main/side-sections/TestimonialsSection"),
 );
-const FormSection = lazy(() =>
-  import("./components/main/sections/FormSection"),
+const FormSection = lazy(
+  () => import("./components/main/sections/FormSection"),
 );
 
 const client = new ApolloClient({
@@ -61,7 +61,6 @@ function App() {
           <InfoSection3 />
           <ResultsSection />
           <TestimonialsSection />
-          <FormSection />
         </Suspense>
         <Footer />
       </div>

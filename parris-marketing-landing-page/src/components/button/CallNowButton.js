@@ -1,10 +1,9 @@
 import Button from "react-bootstrap/Button";
-import "./Button.css";
 
 const CallNowButton = () => {
   return (
     <>
-      <Button variant="secondary" href="tel:6613413168">
+      <Button variant="secondary" href="tel:866-714-1750">
         Call Now
       </Button>
     </>

@@ -26,6 +26,7 @@
 }
 
 .info-section {
+  margin-top: 2rem;
   margin-right: 1rem;
 }
 
@@ -40,13 +41,13 @@
 .results-info-section > h4 {
   margin-bottom: 1rem;
   font-weight: 700;
-  font-size: 2.188rem;
+  font-size: 26px;
   text-align: left;
   text-align-last: left;
 }
 
 blockquote {
-  font-style: italic;
+  font-style: normal;
 }
 
 .card-logo {
@@ -129,7 +130,7 @@ h3 {
 }
 
 .cta-section h3 {
-  font-size: 2.25rem;
+  font-size: 26px;
   margin-left: -6rem;
 }
 
@@ -159,7 +160,7 @@ h3 {
   max-width: 28.438rem;
   margin: 0 auto;
   text-align: center;
-  text-align: center;
+  text-align-last: center;
 }
 
 .results-info-section > p {
@@ -217,7 +218,7 @@ h3 {
 }
 
 .testimonial-section-info > h4 {
-  font-size: 2.188rem;
+  font-size: 26px;
   margin: 1rem 0 1.5rem 0;
 }
 
@@ -244,7 +245,7 @@ h3 {
 
 footer {
   padding: 4.5rem 0 2rem 0;
-  margin: 2rem 0 0 0;
+  margin: 0;
   color: #fff;
 }
 
@@ -275,17 +276,28 @@ footer img {
     text-align: cemter !important;
   }
 
+  .testimonial-section-cards .card-text {
+    text-align: center;
+    text-align-last: center;
+  }
+
   .cards-section > .card {
     max-height: 23rem;
     min-height: 19rem;
   }
 
+  .cards-section .pi-card:nth-child(2) {
+    max-height: 25rem;
+    min-height: 25rem;
+  }
+
   .info-section {
+    margin-top: 0px;
     width: 100%;
   }
 
   .results-info-section > h4 {
-    text-align: left;
+    text-align-last: left;
     text-align: left;
   }
 
@@ -400,6 +412,7 @@ footer img {
   .testimonial-section-cards h5,
   .testimonial-section-cards h6 {
     text-align: center;
+    font-size: 18px;
   }
 
   .testimonial-section-cards > .card {
@@ -443,7 +456,7 @@ footer img {
   h2,
   h3,
   h4 {
-    font-size: 1.5rem !important;
+    font-size: 26px !important;
   }
 
   .results-card-section > .card,
@@ -481,11 +494,9 @@ footer img {
   }
 
   .cards-section p {
-    text-align: justify !important;
-    hyphens: auto !important;
+    text-align: center !important;
     max-width: 60ch;
-    text-align-last: left;
-    word-spacing: -3px;
+    text-align-last: center;
     word-wrap: break-word;
   }
 

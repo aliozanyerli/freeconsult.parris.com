@@ -7,6 +7,7 @@ import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
+import axios from "axios";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
@@ -130,29 +131,25 @@ const ContactForm = () => {
     }
 
     try {
-      const zappierWebhookProxyURL = `https://hooks.zapier.com/hooks/catch/3796793/38z21pr/`;
-      console.log(formData);
-      const response = await fetch(zappierWebhookProxyURL, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await axios.post(
+        "https://hooks.zapier.com/hooks/catch/3796793/38z21pr/",
+        formData,
+        { headers: { "Content-Type": "application/json" } },
+      );
 
-      if (response.ok) {
-        const jsonResponse = await response.json();
-        console.log("Data sent successfully to the webhook:", jsonResponse);
+      if (response.status === 200) {
+        console.log("Data sent successfully to the webhook:", response.data);
+        setShowSpinner(false);
+        setShowSuccessMessage(true);
       } else {
         console.error(
-          "Failed to send data Zappier. Status code:",
-          response.statusText,
+          "Failed to send data to the webhook. Status code:",
+          response.status,
         );
         setApiError(true);
       }
-      console.log("Form data submitted:", formData);
     } catch (error) {
-      console.log("Error Posting to Zapier:", error);
+      console.error("Error Posting to Zapier:", error);
       setApiError(true);
     }
   };

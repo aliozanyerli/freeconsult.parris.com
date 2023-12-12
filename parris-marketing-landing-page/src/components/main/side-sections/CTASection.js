@@ -1,6 +1,6 @@
 import React from "react";
 import "../sections/Sections.css";
-import Button from "../../button/Button";
+import CallNowButton from "../../button/CallNowButton.js";
 
 const CTASection = () => {
   return (
@@ -8,7 +8,7 @@ const CTASection = () => {
       <aside className="d-flex align-items-center flex-mobile">
         <h3>Have Questions? We Can Help!</h3>
         <div className="btn-container free-case-btn">
-          <Button />
+          <CallNowButton />
         </div>
       </aside>
     </section>

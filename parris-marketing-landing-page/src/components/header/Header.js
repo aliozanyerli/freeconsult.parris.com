@@ -3,7 +3,7 @@ import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
 import parrisLogo from "../../assets/parris-law-firm-logo.svg";
 import "./Header.css";
-import Button from "../button/Button";
+import CallNowButton from "../button/CallNowButton";
 
 const Header = () => {
   return (
@@ -20,7 +20,7 @@ const Header = () => {
           />
         </div>
         <div className="mt-4 ms-auto no-show-mobile">
-          <Button />
+          <CallNowButton />
         </div>
       </div>
     </header>

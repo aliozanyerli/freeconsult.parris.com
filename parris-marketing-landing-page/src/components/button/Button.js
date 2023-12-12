@@ -1,5 +1,4 @@
 import Button from "react-bootstrap/Button";
-import "./Button.css";
 
 function ButtonFreeConsultation() {
   return (
@@ -11,4 +10,12 @@ function ButtonFreeConsultation() {
   );
 }
 
-export default ButtonFreeConsultation;
+function ButtonFreeConsultationCall() {
+  return (
+    <Button variant="secondary" href="tel:866-714-1750">
+      Free Case Review
+    </Button>
+  );
+}
+
+export { ButtonFreeConsultation, ButtonFreeConsultationCall };

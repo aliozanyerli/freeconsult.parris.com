@@ -15,7 +15,7 @@
 }
 
 p {
-  font-size: 1.125rem;
+  font-size: 18px;
 }
 
 .header {
@@ -49,7 +49,6 @@ p {
     text-align: justify;
     max-width: 60ch;
     text-align-last: left;
-    hyphens: auto !important;
     word-spacing: -1px;
   }
 

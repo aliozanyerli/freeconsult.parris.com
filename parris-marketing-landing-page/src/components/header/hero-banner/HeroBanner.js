@@ -1,6 +1,6 @@
 import React from "react";
 import "../Header.css";
-import Button from "../../button/Button";
+import { ButtonFreeConsultationCall } from "../../button/Button";
 import CallNowButton from "../../button/CallNowButton";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import "react-lazy-load-image-component/src/effects/opacity.css";
@@ -25,7 +25,7 @@ const HeroBanner = () => {
             handle the most complex cases.
           </p>
           <div className="no-show-mobile">
-            <Button />
+            <ButtonFreeConsultationCall />
           </div>
           <div className="no-show-desktop">
             <CallNowButton />

@@ -34,7 +34,7 @@
 
 @media only screen and (max-width: 767px) {
   .carousel-caption > h2 {
-    font-size: 2rem !important;
+    font-size: 26px !important;
     font-weight: 700;
   }
 
@@ -58,7 +58,7 @@
   }
 
   .carousel-caption > p {
-    font-size: 1rem;
+    font-size: 18px;
     margin: 1rem 0;
     padding: 0.3rem;
     font-weight: 600;
@@ -79,12 +79,12 @@
   }
 
   #carousel-section {
-    min-width: 40rem;
+    min-width: 45.5rem;
   }
 
   .carousel {
     top: 5%;
-    right: 8%;
+    right: 2.5%;
   }
 
   .carousel-container {
@@ -96,12 +96,12 @@
   }
 
   .carousel-caption {
-    padding: 40px 0 0 0;
+    padding: 50px 0 0 0;
     background-color: rgba(5, 18, 34, 0.7) !important;
     width: 50%;
     margin: auto;
     border-radius: 10px;
-    min-height: 23rem;
+    min-height: 25rem;
     border: 3px solid #6d6e71;
   }
 

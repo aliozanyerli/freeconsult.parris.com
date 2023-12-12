@@ -1,7 +1,7 @@
 import React from "react";
 import "../sections/Sections.css";
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/opacity.css'; 
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/opacity.css";
 import fiveStarReview from "../../../assets/5-star-review-for-personal-injury-attorney-law-firm.webp";
 import lisaH from "../../../assets/lisa-parris-law-firm-client-testimonial.webp";
 import armandoA from "../../../assets/armando-parris-law-firm-client-testimonial.webp";
@@ -13,10 +13,16 @@ const TestimonialsSection = () => {
       <div className="container d-flex justify-content-center flex-column">
         <div className="testimonial-section-info text-center">
           <strong>Testimonials</strong>
-          <h4 id="testiominials">What Clients Say About Us</h4>
+          <h4 id="testiominials">
+            What Clients Say
+            <br /> About Us
+          </h4>
         </div>
         <div className="testimonial-section-cards d-flex justify-content-center flex-mobile">
-          <div className="card text-dark bg-white mb-3 shadow-sm" style={{ maxWidth: "18rem" }}>
+          <div
+            className="card text-dark bg-white mb-3 shadow-sm"
+            style={{ maxWidth: "18rem" }}
+          >
             <div className="card-body text-center">
               <LazyLoadImage
                 effect="opacity"
@@ -45,7 +51,10 @@ const TestimonialsSection = () => {
               />
             </div>
           </div>
-          <div className="card text-dark bg-white mb-3 shadow-sm" style={{ maxWidth: "18rem" }}>
+          <div
+            className="card text-dark bg-white mb-3 shadow-sm"
+            style={{ maxWidth: "18rem" }}
+          >
             <div className="card-body text-center">
               <LazyLoadImage
                 effect="opacity"
@@ -74,7 +83,10 @@ const TestimonialsSection = () => {
               />
             </div>
           </div>
-          <div className="card text-dark bg-white mb-3 shadow-sm" style={{ maxWidth: "18rem" }}>
+          <div
+            className="card text-dark bg-white mb-3 shadow-sm"
+            style={{ maxWidth: "18rem" }}
+          >
             <div className="card-body text-center">
               <LazyLoadImage
                 effect="opacity"

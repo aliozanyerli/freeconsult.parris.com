@@ -1,7 +1,7 @@
 h1 {
-  font-size: 3.5rem;
-  font-weight: 630;
-  width: 34.5rem;
+  font-size: 64px;
+  font-weight: 600;
+  width: 38rem;
   line-height: 1;
 }
 
@@ -65,11 +65,11 @@ hr {
 
 .btn-secondary {
   background-color: rgba(216, 142, 76);
-  font-weight: 700;
+  font-weight: 700 !important;
   width: 12rem;
   padding: 0.8rem;
   border: none;
-  font-size: 1rem;
+  font-size: 18px;
 }
 
 .btn-secondary:active,
@@ -185,6 +185,6 @@ hr {
   }
 
   section {
-    margin: 5rem auto 3rem auto;
+    margin: 3rem auto;
   }
 }

@@ -16,7 +16,7 @@ const InfoSection1 = () => {
       </div>
       <div className="cards-section d-flex flex-mobile justify-content-center align-items-center">
         <div
-          className="card text-white bg-dark mb-3 shadow-sm"
+          className="card pi-card text-white bg-dark mb-3 shadow-sm"
           style={{ maxWidth: "20rem" }}
         >
           <div className="card-header d-flex justify-content-start">
@@ -31,7 +31,7 @@ const InfoSection1 = () => {
           </div>
         </div>
         <div
-          className="card text-white bg-dark mb-3 shadow-sm"
+          className="card pi-card text-white bg-dark mb-3 shadow-sm"
           style={{ maxWidth: "20rem" }}
         >
           <div className="card-header d-flex justify-content-start">
@@ -47,7 +47,7 @@ const InfoSection1 = () => {
           </div>
         </div>
         <div
-          className="card text-white bg-dark mb-3 shadow-sm"
+          className="card pi-card text-white bg-dark mb-3 shadow-sm"
           style={{ maxWidth: "20rem" }}
         >
           <div className="card-header d-flex justify-content-start">
