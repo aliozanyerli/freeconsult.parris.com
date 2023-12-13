@@ -34,8 +34,8 @@ const HeroBanner = () => {
           <p>
             With Billions{" "}
             <span style={{ color: "#D88E4C", fontWeight: "700" }}>Won</span> for
-            clients since 1985, our attorneys have track record and resources to
-            handle the most complex cases.
+            clients since 1985, our attorneys have the track record and
+            resources to handle the most complex cases.
           </p>
           <div className="no-show-mobile">
             <ButtonFreeConsultationCall />

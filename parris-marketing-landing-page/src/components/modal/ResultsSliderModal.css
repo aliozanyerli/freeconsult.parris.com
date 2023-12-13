@@ -1,8 +1,9 @@
 .offcanvas {
   background-image: linear-gradient(150deg, #00496b 1%, #002970 100%);
   color: #fff;
-  height: 50% !important;
+  height: 70% !important;
   overflow-y: auto;
+  z-index: 9999999999;
 }
 
 .offcanvas .container {
@@ -52,7 +53,7 @@
   }
 
   .offcanvas-body p {
-    word-spacing: -3px;
+    word-spacing: -5px;
   }
 
   .offcanvas-title {
