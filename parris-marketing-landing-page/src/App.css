@@ -121,3 +121,9 @@ p {
     min-height: 25vh;
   }
 }
+
+@media (min-width: 1400px) {
+  .hero-banner-text .no-show-desktop {
+    display: none !important;
+  }
+}

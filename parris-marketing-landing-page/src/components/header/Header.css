@@ -108,6 +108,44 @@ hr {
 
 /* Mobile styles */
 @media only screen and (max-width: 767px) {
+  .banner-cta {
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 18px;
+    color: #d88e4c !important;
+    box-shadow: 0px 0px 0px transparent;
+    border: 0px solid transparent;
+    text-shadow: 0px 0px 0px transparent;
+    margin-top: 10px;
+    position: relative;
+    right: -7%;
+    text-decoration: unset !important;
+  }
+
+  .banner-cta:link,
+  .banner-cta:visited,
+  .banner-cta:active,
+  .banner-cta:hover {
+    text-decoration: unset !important;
+  }
+
+  .banner-cta-container {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .free-consult-text {
+    font-size: 15px;
+    font-weight: bold;
+  }
+
+  .pos-rel {
+    position: relative;
+    top: -10%;
+  }
+
   .hero-banner-accolades-img {
     margin: 1rem auto;
     max-width: 100%;
