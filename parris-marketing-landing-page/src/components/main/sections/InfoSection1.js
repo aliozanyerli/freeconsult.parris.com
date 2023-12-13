@@ -10,8 +10,8 @@ const InfoSection1 = () => {
         </h2>
         <hr />
         <p>
-          All of our cases are on a contingency fee basis, which means if we
-          don’t win, you don’t pay. We advance all the costs necessary to
+          All of our cases are taken on a contingency fee basis, which means if
+          we don’t win, you don’t pay. We advance all the costs necessary to
           litigate your case. Once your case is resolved, our fee is a
           percentage of the result we’ve obtained for you.
         </p>

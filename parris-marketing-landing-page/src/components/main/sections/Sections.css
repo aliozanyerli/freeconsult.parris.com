@@ -296,6 +296,10 @@ footer img {
     width: 100%;
   }
 
+  .info-section p {
+    word-spacing: -2.5px;
+  }
+
   .results-info-section > h4 {
     text-align-last: left;
     text-align: left;
