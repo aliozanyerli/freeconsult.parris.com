@@ -1,13 +1,13 @@
 .offcanvas {
   background-image: linear-gradient(150deg, #00496b 1%, #002970 100%);
   color: #fff;
-  height: 70% !important;
+  height: 55% !important;
   overflow-y: auto;
   z-index: 9999999999;
 }
 
 .offcanvas .container {
-  padding: 0 0.1rem;
+  padding: 0px;
   margin: auto;
 }
 
@@ -20,14 +20,23 @@
   margin-bottom: 0;
 }
 
-.offcanvas-header h3,
-.offcanvas-body h4 {
+.offcanvas-header h3 {
   color: rgb(216, 142, 76);
-  font-weight: 700;
+  font-weight: 740;
+}
+
+.offcanvas-body h4 {
+  color: #fff;
+  font-weight: bold;
+}
+
+.offcanvas-header p,
+.offcanvas-body p {
+  font-weight: normal;
 }
 
 .offcanvas-header h3 {
-  font-size: 2rem;
+  font-size: 26px;
 }
 
 .offcanvas-header {
@@ -49,11 +58,11 @@
     padding-right: 0;
     padding-bottom: 0;
     margin-bottom: 0;
-    height: 28vh;
+    height: auto;
   }
 
   .offcanvas-body p {
-    word-spacing: -5px;
+    word-spacing: 0px;
   }
 
   .offcanvas-title {
@@ -72,6 +81,7 @@
   .btn-close {
     padding: 0.5rem !important;
     font-size: 1.5rem;
+    margin-bottom: 25px !important;
     background-image: url("../../../node_modules/bootstrap-icons/icons/arrow-up-circle.svg");
   }
 

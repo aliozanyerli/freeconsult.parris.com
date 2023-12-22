@@ -21,8 +21,8 @@ const HeroBanner = () => {
               <span className="free-consult-text pos-rel">AVAILABLE 24/7</span>
             </div>
             <div>
-              <button className="banner-cta" href="(866) 714-1750">
-                (866) 714-1750
+              <button className="banner-cta" href="tel:(661) 341-3169">
+                (661) 341-3169
               </button>
             </div>
           </div>

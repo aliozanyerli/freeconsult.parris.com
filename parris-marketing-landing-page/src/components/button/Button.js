@@ -12,7 +12,7 @@ function ButtonFreeConsultation() {
 
 function ButtonFreeConsultationCall() {
   return (
-    <Button variant="secondary" href="tel:(310) 824-5600">
+    <Button variant="secondary" href="tel:(661) 341-3169">
       Free Case Review
     </Button>
   );

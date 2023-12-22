@@ -45,11 +45,9 @@ p {
   }
 
   p {
-    word-spacing: 0px;
+    word-spacing: -1px;
     text-align: justify;
-    max-width: 60ch;
     text-align-last: left;
-    word-spacing: -1.5px;
   }
 
   h1 {
@@ -65,7 +63,7 @@ p {
   caption,
   strong,
   p {
-    width: 80% !important;
+    width: 80%;
     margin: 1rem auto !important;
     line-height: 1.5;
     z-index: 100000;
