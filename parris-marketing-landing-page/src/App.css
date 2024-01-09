@@ -45,9 +45,8 @@ p {
   }
 
   p {
-    word-spacing: -1px;
-    text-align: justify;
-    text-align-last: left;
+    text-align: center;
+    text-align-last: center;
   }
 
   h1 {
@@ -63,10 +62,18 @@ p {
   caption,
   strong,
   p {
-    width: 80%;
+    width: 90%;
     margin: 1rem auto !important;
     line-height: 1.5;
-    z-index: 100000;
+    z-index: 10;
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.4;
   }
 
   .card-text {
@@ -121,7 +128,7 @@ p {
 }
 
 @media (min-width: 1400px) {
-  .hero-banner-text .no-show-desktop {
+  .no-show-desktop {
     display: none !important;
   }
 }

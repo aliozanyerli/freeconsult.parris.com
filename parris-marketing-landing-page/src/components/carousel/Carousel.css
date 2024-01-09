@@ -32,6 +32,15 @@
   background-color: transparent;
 }
 
+body > div.offcanvas.offcanvas-bottom.show {
+  border-style: none;
+}
+
+.offcanvas {
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+
 @media only screen and (max-width: 767px) {
   .carousel-caption > h2 {
     font-size: 26px !important;

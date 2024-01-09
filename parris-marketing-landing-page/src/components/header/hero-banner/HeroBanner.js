@@ -14,19 +14,6 @@ const HeroBanner = () => {
       <Header></Header>
       <div className="container d-flex">
         <div className="d-flex flex-column hero-banner-text mt-5">
-          <div className="d-flex no-show-desktop banner-cta-container">
-            <div>
-              <span className="free-consult-text">FREE CONSULTATION</span>
-              <br className="br-element" />
-              <span className="free-consult-text pos-rel">AVAILABLE 24/7</span>
-            </div>
-            <div>
-              <button className="banner-cta" href="tel:(661) 341-3169">
-                (661) 341-3169
-              </button>
-            </div>
-          </div>
-
           <h1>
             You Deserve The <span style={{ color: "#D88E4C" }}>Best</span>{" "}
             Personal Injury Attorneys.

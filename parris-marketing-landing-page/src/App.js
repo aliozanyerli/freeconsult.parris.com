@@ -7,6 +7,7 @@ import AccoladesSection from "./components/main/side-sections/AccoladesSection";
 import CTASection from "./components/main/side-sections/CTASection";
 import Footer from "./components/footer/Footer";
 import IndividualIntervalsCarousel from "./components/carousel/Carousel";
+import CookiesConsent from "./components/modal/disclosure-banner/PrivacyPolicyDisclosureBanner.js";
 
 // Lazy loaded components
 const InfoSection2 = lazy(
@@ -29,7 +30,7 @@ const client = new ApolloClient({
 
 function App() {
   useEffect(() => {
-    const delayGTMInitialization = () => {
+    window.onload = () => {
       const script = document.createElement("script");
       script.innerHTML = `
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -40,9 +41,6 @@ function App() {
       `;
       document.head.appendChild(script);
     };
-
-    // Delay GTM initialization by 10 seconds
-    setTimeout(delayGTMInitialization, 10000);
   }, []);
 
   return (
@@ -59,6 +57,7 @@ function App() {
           <ResultsSection />
           <TestimonialsSection />
         </Suspense>
+        <CookiesConsent />
         <Footer />
       </div>
     </ApolloProvider>

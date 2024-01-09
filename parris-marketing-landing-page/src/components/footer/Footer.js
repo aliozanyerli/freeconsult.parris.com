@@ -18,7 +18,7 @@ const Footer = () => {
             alt="PARRIS Personal Injury Law Firm Logo"
           />
           <caption className="row justify-content-center">
-            2023 © PARRIS Law Firm. All rights reserved.
+            2024 © PARRIS Law Firm. All rights reserved.
           </caption>
         </figure>
       </footer>
